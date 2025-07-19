@@ -44,7 +44,7 @@ export function useAuth(): AuthState & AuthActions {
   const [state, setState] = useState<AuthState>({
     user: null,
     session: null,
-    loading: false,
+    loading: true, // Start with loading true
     error: null,
   });
 
@@ -53,18 +53,36 @@ export function useAuth(): AuthState & AuthActions {
     // Get initial session
     const getInitialSession = async () => {
       try {
+        console.log('useAuth: Getting initial session...');
         const {
           data: { session },
           error,
         } = await supabase.auth.getSession();
 
+        console.log('useAuth: Initial session result:', {
+          hasSession: !!session,
+          userId: session?.user?.id,
+          userEmail: session?.user?.email,
+          error: error?.message,
+          sessionExpiresAt: session?.expires_at,
+          sessionAccessToken: session?.access_token ? 'PRESENT' : 'MISSING',
+        });
+
         if (error) {
+          console.error('useAuth: Error getting session:', error);
           setState(prev => ({ ...prev, error, loading: false }));
           return;
         }
 
         if (session) {
+          console.log('useAuth: Enriching user data...');
           const user = await enrichUserData(session.user);
+          console.log('useAuth: User enriched:', {
+            id: user.id,
+            email: user.email,
+            role: user.role,
+            shop_id: user.shop_id,
+          });
           setState({
             user,
             session,
@@ -72,9 +90,11 @@ export function useAuth(): AuthState & AuthActions {
             error: null,
           });
         } else {
+          console.log('useAuth: No session found');
           setState(prev => ({ ...prev, loading: false }));
         }
       } catch (error) {
+        console.error('useAuth: Exception getting initial session:', error);
         setState(prev => ({
           ...prev,
           error: error as AuthError,
@@ -89,10 +109,25 @@ export function useAuth(): AuthState & AuthActions {
     const {
       data: { subscription },
     } = supabase.auth.onAuthStateChange(async (event, session) => {
+      console.log('useAuth: Auth state changed:', event, {
+        hasSession: !!session,
+        userId: session?.user?.id,
+        userEmail: session?.user?.email,
+        sessionExpiresAt: session?.expires_at,
+        sessionAccessToken: session?.access_token ? 'PRESENT' : 'MISSING',
+      });
+
       setState(prev => ({ ...prev, loading: true }));
 
       if (session) {
+        console.log('useAuth: Enriching user data for auth change...');
         const user = await enrichUserData(session.user);
+        console.log('useAuth: User enriched for auth change:', {
+          id: user.id,
+          email: user.email,
+          role: user.role,
+          shop_id: user.shop_id,
+        });
         setState({
           user,
           session,
@@ -100,6 +135,7 @@ export function useAuth(): AuthState & AuthActions {
           error: null,
         });
       } else {
+        console.log('useAuth: Session cleared');
         setState({
           user: null,
           session: null,
@@ -123,19 +159,32 @@ export function useAuth(): AuthState & AuthActions {
         .single();
 
       if (error) {
-        console.error('Error fetching user profile:', error);
-        return user as AuthUser;
+        console.warn('Error fetching user profile:', error);
+        // Return user without enriched data if profile doesn't exist
+        // This can happen during signup before the profile is created
+        return {
+          ...user,
+          role: 'attendant' as UserRole, // Default role
+          shop_id: undefined,
+          permissions: [],
+        } as AuthUser;
       }
 
       return {
         ...user,
-        role: profile?.role as UserRole,
+        role: (profile?.role as UserRole) || 'attendant',
         shop_id: profile?.shop_id,
         permissions: profile?.permissions || [],
       };
     } catch (error) {
       console.error('Error enriching user data:', error);
-      return user as AuthUser;
+      // Return user without enriched data on error
+      return {
+        ...user,
+        role: 'attendant' as UserRole, // Default role
+        shop_id: undefined,
+        permissions: [],
+      } as AuthUser;
     }
   }, []);
 

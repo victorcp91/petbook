@@ -18,34 +18,66 @@ export function ProtectedRoute({
   requiredPermissions = [],
   fallback,
 }: ProtectedRouteProps) {
-  const { user, loading } = useAuthContext();
+  const { user, loading, session } = useAuthContext();
   const router = useRouter();
 
+  console.log('ProtectedRoute - State:', {
+    hasUser: !!user,
+    userId: user?.id,
+    userEmail: user?.email,
+    userRole: user?.role,
+    loading,
+    hasSession: !!session,
+    requiredRole,
+    requiredPermissions,
+  });
+
   useEffect(() => {
-    if (!loading && !user) {
+    console.log('ProtectedRoute - useEffect triggered:', {
+      loading,
+      hasUser: !!user,
+      userId: user?.id,
+      userEmail: user?.email,
+      hasSession: !!session,
+    });
+
+    // Wait for auth to be fully initialized (not loading and session checked)
+    if (loading) {
+      console.log('ProtectedRoute - Still loading, waiting...');
+      return;
+    }
+
+    // If no session and not loading, redirect to signin
+    if (!session && !user) {
+      console.log('ProtectedRoute - No session or user, redirecting to signin');
       router.push('/auth/signin');
       return;
     }
 
-    if (!loading && user && requiredRole && user.role !== requiredRole) {
+    // If user exists but role doesn't match required role
+    if (user && requiredRole && user.role !== requiredRole) {
+      console.log('ProtectedRoute - Wrong role, redirecting to dashboard');
       router.push('/dashboard');
       return;
     }
 
-    if (!loading && user && requiredPermissions.length > 0) {
+    // If user exists but doesn't have required permissions
+    if (user && requiredPermissions.length > 0) {
       const hasPermission = requiredPermissions.some(permission =>
         user.permissions?.includes(permission)
       );
 
       if (!hasPermission) {
+        console.log('ProtectedRoute - No permission, redirecting to dashboard');
         router.push('/dashboard');
         return;
       }
     }
-  }, [user, loading, requiredRole, requiredPermissions, router]);
+  }, [user, loading, session, requiredRole, requiredPermissions, router]);
 
   // Show loading state while checking authentication
   if (loading) {
+    console.log('ProtectedRoute - Showing loading state');
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="flex flex-col items-center space-y-4">
@@ -57,7 +89,8 @@ export function ProtectedRoute({
   }
 
   // Show fallback or redirect if not authenticated
-  if (!user) {
+  if (!user && !session) {
+    console.log('ProtectedRoute - No user or session, showing fallback');
     return (
       fallback || (
         <div className="min-h-screen flex items-center justify-center">
@@ -71,7 +104,8 @@ export function ProtectedRoute({
   }
 
   // Check role requirements
-  if (requiredRole && user.role !== requiredRole) {
+  if (requiredRole && user && user.role !== requiredRole) {
+    console.log('ProtectedRoute - Wrong role, showing fallback');
     return (
       fallback || (
         <div className="min-h-screen flex items-center justify-center">
@@ -85,12 +119,13 @@ export function ProtectedRoute({
   }
 
   // Check permission requirements
-  if (requiredPermissions.length > 0) {
+  if (user && requiredPermissions.length > 0) {
     const hasPermission = requiredPermissions.some(permission =>
       user.permissions?.includes(permission)
     );
 
     if (!hasPermission) {
+      console.log('ProtectedRoute - No permission, showing fallback');
       return (
         fallback || (
           <div className="min-h-screen flex items-center justify-center">
@@ -105,5 +140,6 @@ export function ProtectedRoute({
   }
 
   // User is authenticated and has required permissions
+  console.log('ProtectedRoute - Rendering children');
   return <>{children}</>;
 }

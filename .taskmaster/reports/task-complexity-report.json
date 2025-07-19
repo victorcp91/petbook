@@ -1,0 +1,213 @@
+{
+  "meta": {
+    "generatedAt": "2025-07-18T16:08:47.948Z",
+    "tasksAnalyzed": 25,
+    "totalTasks": 25,
+    "analysisCount": 25,
+    "thresholdScore": 5,
+    "projectName": "Taskmaster",
+    "usedResearch": true
+  },
+  "complexityAnalysis": [
+    {
+      "taskId": 1,
+      "taskTitle": "Setup Monorepo and Project Structure",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the monorepo setup into detailed steps, including specific configurations for Next.js, Supabase, and development tools.",
+      "reasoning": "High complexity due to multiple technologies and configurations involved. Crucial foundation for the project."
+    },
+    {
+      "taskId": 2,
+      "taskTitle": "Implement Authentication Flow",
+      "complexityScore": 8,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Detail each step of the authentication process, including Supabase configuration, frontend implementation, and security measures.",
+      "reasoning": "Critical security feature with multiple components and integration points. Requires careful implementation and testing."
+    },
+    {
+      "taskId": 3,
+      "taskTitle": "Design System and UI Components",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Outline the creation of each UI component, including design considerations, accessibility, and responsive behavior.",
+      "reasoning": "Foundational for UI consistency and development efficiency. Requires design skills and attention to detail."
+    },
+    {
+      "taskId": 4,
+      "taskTitle": "Database Schema and Row-Level Security",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the creation of each database table, relationships, and RLS policies, including considerations for data integrity and performance.",
+      "reasoning": "Complex due to security implications and need for careful data modeling. Critical for application functionality and data protection."
+    },
+    {
+      "taskId": 5,
+      "taskTitle": "User Management and Roles",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the implementation of user roles, access control, and management features for each user type.",
+      "reasoning": "Involves intricate access control logic and integration with authentication system. Important for application security and functionality."
+    },
+    {
+      "taskId": 6,
+      "taskTitle": "Appointment Scheduling System",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the implementation of appointment creation, calendar view, and scheduling logic, including conflict resolution.",
+      "reasoning": "Complex due to date/time handling, UI interactions, and potential conflicts. Core feature requiring careful implementation."
+    },
+    {
+      "taskId": 7,
+      "taskTitle": "General Queue and Service Claiming",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Outline the queue management system, including state management, real-time updates, and service claiming process.",
+      "reasoning": "Involves real-time data handling and complex state management. Critical for day-to-day operations of the business."
+    },
+    {
+      "taskId": 8,
+      "taskTitle": "Grooming Service Wizard",
+      "complexityScore": 8,
+      "recommendedSubtasks": 8,
+      "expansionPrompt": "Break down each step of the grooming service wizard, including photo capture, form handling, and signature implementation.",
+      "reasoning": "Involves multiple steps, device integration, and data processing. Key feature for service delivery and record-keeping."
+    },
+    {
+      "taskId": 9,
+      "taskTitle": "PDF and CSV Export Functionality",
+      "complexityScore": 6,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the implementation of PDF and CSV generation, including data formatting and export process handling.",
+      "reasoning": "Moderate complexity due to data processing and file generation. Important for data portability and reporting."
+    },
+    {
+      "taskId": 10,
+      "taskTitle": "WhatsApp Reminder System",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Outline the integration with WhatsApp API, reminder scheduling, and fallback mechanisms.",
+      "reasoning": "Involves third-party API integration and complex scheduling logic. Enhances user experience and business operations."
+    },
+    {
+      "taskId": 11,
+      "taskTitle": "Dashboard and KPI Reporting",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the implementation of KPI calculations, data visualization, and real-time updates for the dashboard.",
+      "reasoning": "Requires data aggregation, real-time updates, and complex UI components. Critical for business insights and decision-making."
+    },
+    {
+      "taskId": 12,
+      "taskTitle": "Client and Pet Management",
+      "complexityScore": 6,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the CRUD operations, search functionality, and data display for client and pet management.",
+      "reasoning": "Moderate complexity with standard CRUD operations and search functionality. Essential for managing customer data."
+    },
+    {
+      "taskId": 13,
+      "taskTitle": "PWA Configuration for Kiosk Mode",
+      "complexityScore": 6,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the steps for PWA setup, offline support, and kiosk mode optimization.",
+      "reasoning": "Requires specific configurations and optimizations for PWA and kiosk mode. Enhances application accessibility and usability."
+    },
+    {
+      "taskId": 14,
+      "taskTitle": "Multi-language Support",
+      "complexityScore": 6,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Outline the implementation of internationalization, including translation management and language switching.",
+      "reasoning": "Moderate complexity involving string management and UI adaptations. Improves accessibility for diverse user base."
+    },
+    {
+      "taskId": 15,
+      "taskTitle": "Stripe Integration for SaaS Subscription",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the Stripe integration process, including checkout, webhook handling, and subscription management.",
+      "reasoning": "Involves third-party API integration and complex payment logic. Critical for business model and revenue generation."
+    },
+    {
+      "taskId": 16,
+      "taskTitle": "Audit Logging System",
+      "complexityScore": 6,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Outline the implementation of audit logging, including log creation, storage, and viewing functionality.",
+      "reasoning": "Moderate complexity with focus on data tracking and management. Important for security and compliance."
+    },
+    {
+      "taskId": 17,
+      "taskTitle": "Performance Optimization",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail specific optimization techniques for frontend and backend, including metrics for measuring improvements.",
+      "reasoning": "High complexity due to the breadth of optimization areas and the need for careful testing and measurement."
+    },
+    {
+      "taskId": 18,
+      "taskTitle": "Security Enhancements",
+      "complexityScore": 9,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down each security measure, including implementation details and best practices for each.",
+      "reasoning": "Critical for application security with multiple complex components. Requires in-depth knowledge and careful implementation."
+    },
+    {
+      "taskId": 19,
+      "taskTitle": "Offline Mode Support",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the offline data storage, sync mechanism, and conflict resolution strategies for offline mode.",
+      "reasoning": "Complex due to data synchronization challenges and need for seamless online/offline transitions."
+    },
+    {
+      "taskId": 20,
+      "taskTitle": "Analytics and Tracking",
+      "complexityScore": 6,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Outline the implementation of analytics, including event tracking, data visualization, and compliance measures.",
+      "reasoning": "Moderate complexity involving integration of analytics tools and data processing. Important for business insights."
+    },
+    {
+      "taskId": 21,
+      "taskTitle": "Customer Loyalty Program",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the loyalty program implementation, including point system, reward management, and integration with existing features.",
+      "reasoning": "Involves complex business logic and integration with multiple system components. Enhances customer retention and satisfaction."
+    },
+    {
+      "taskId": 22,
+      "taskTitle": "Multi-branch Support",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Outline the modifications needed for multi-branch support, including data isolation and consolidated reporting.",
+      "reasoning": "High complexity due to data segregation requirements and need for cross-branch functionality. Significant architectural impact."
+    },
+    {
+      "taskId": 23,
+      "taskTitle": "API Documentation",
+      "complexityScore": 5,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Break down the process of documenting each API endpoint, including examples and SDK creation.",
+      "reasoning": "Moderate complexity focused on clear communication of API functionality. Important for developer experience and integration."
+    },
+    {
+      "taskId": 24,
+      "taskTitle": "Automated Testing Suite",
+      "complexityScore": 8,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Detail the setup of each testing type, including unit, integration, and end-to-end tests, with coverage goals.",
+      "reasoning": "Critical for code quality and reliability. Complex due to the variety of testing types and coverage requirements."
+    },
+    {
+      "taskId": 25,
+      "taskTitle": "User Onboarding and Tutorial",
+      "complexityScore": 7,
+      "recommendedSubtasks": 7,
+      "expansionPrompt": "Outline the creation of onboarding flows, tutorials, and help content for different user roles.",
+      "reasoning": "Involves UX design, content creation, and integration with application features. Important for user adoption and satisfaction."
+    }
+  ]
+}

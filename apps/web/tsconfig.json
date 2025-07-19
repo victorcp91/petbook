@@ -1,0 +1,18 @@
+{
+  "extends": "../../packages/config/typescript-preset.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@petbook/ui": ["../../packages/ui/src"],
+      "@petbook/utils": ["../../packages/utils/src"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": ["node_modules"]
+} 

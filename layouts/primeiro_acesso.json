@@ -1,0 +1,3690 @@
+{
+  "id": "19:1322",
+  "name": "Primeiro Acesso",
+  "type": "FRAME",
+  "x": 1890,
+  "y": 2587,
+  "width": 1440,
+  "height": 1440,
+  "relativeTransform": [
+    [1, 0, 1890],
+    [0, 1, 2587]
+  ],
+  "constraints": {
+    "horizontal": "MIN",
+    "vertical": "MIN"
+  },
+  "fills": [
+    {
+      "type": "SOLID",
+      "visible": true,
+      "opacity": 1,
+      "blendMode": "NORMAL",
+      "color": {
+        "r": 1,
+        "g": 1,
+        "b": 1
+      },
+      "boundVariables": {}
+    }
+  ],
+  "strokes": [
+    {
+      "type": "SOLID",
+      "visible": true,
+      "opacity": 1,
+      "blendMode": "NORMAL",
+      "color": {
+        "r": 0.8078431487083435,
+        "g": 0.8313725590705872,
+        "b": 0.8549019694328308
+      },
+      "boundVariables": {}
+    }
+  ],
+  "strokeWeight": 2,
+  "cornerRadius": 8,
+  "effects": [],
+  "blendMode": "PASS_THROUGH",
+  "layoutAlign": "INHERIT",
+  "layoutGrow": 0,
+  "layoutMode": "VERTICAL",
+  "itemSpacing": 0,
+  "children": [
+    {
+      "id": "19:1323",
+      "name": "body",
+      "type": "FRAME",
+      "x": 0,
+      "y": 0,
+      "width": 1440,
+      "height": 1440,
+      "relativeTransform": [
+        [1, 0, 0],
+        [0, 1, 0]
+      ],
+      "constraints": {
+        "horizontal": "MIN",
+        "vertical": "MIN"
+      },
+      "fills": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.9764705896377563,
+            "g": 0.9803921580314636,
+            "b": 0.9843137264251709
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokes": [
+        {
+          "type": "SOLID",
+          "visible": true,
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "color": {
+            "r": 0.8980392217636108,
+            "g": 0.9058823585510254,
+            "b": 0.9215686321258545
+          },
+          "boundVariables": {}
+        }
+      ],
+      "strokeWeight": 0,
+      "cornerRadius": 0,
+      "effects": [],
+      "blendMode": "PASS_THROUGH",
+      "layoutAlign": "INHERIT",
+      "layoutGrow": 0,
+      "layoutMode": "NONE",
+      "itemSpacing": 0,
+      "children": [
+        {
+          "id": "19:1324",
+          "name": "div",
+          "type": "FRAME",
+          "x": 0,
+          "y": 0,
+          "width": 1440,
+          "height": 1440,
+          "relativeTransform": [
+            [1, 0, 0],
+            [0, 1, 0]
+          ],
+          "constraints": {
+            "horizontal": "MIN",
+            "vertical": "MIN"
+          },
+          "fills": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 0,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0,
+                "g": 0,
+                "b": 0
+              },
+              "boundVariables": {}
+            }
+          ],
+          "strokes": [
+            {
+              "type": "SOLID",
+              "visible": true,
+              "opacity": 1,
+              "blendMode": "NORMAL",
+              "color": {
+                "r": 0.8980392217636108,
+                "g": 0.9058823585510254,
+                "b": 0.9215686321258545
+              },
+              "boundVariables": {}
+            }
+          ],
+          "strokeWeight": 0,
+          "cornerRadius": 0,
+          "effects": [],
+          "blendMode": "PASS_THROUGH",
+          "layoutAlign": "INHERIT",
+          "layoutGrow": 0,
+          "layoutMode": "NONE",
+          "itemSpacing": 0,
+          "children": [
+            {
+              "id": "19:1325",
+              "name": "div",
+              "type": "FRAME",
+              "x": 480,
+              "y": 296,
+              "width": 480,
+              "height": 848,
+              "relativeTransform": [
+                [1, 0, 480],
+                [0, 1, 296]
+              ],
+              "constraints": {
+                "horizontal": "MIN",
+                "vertical": "MIN"
+              },
+              "fills": [
+                {
+                  "type": "SOLID",
+                  "visible": true,
+                  "opacity": 1,
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 1,
+                    "g": 1,
+                    "b": 1
+                  },
+                  "boundVariables": {}
+                }
+              ],
+              "strokes": [
+                {
+                  "type": "SOLID",
+                  "visible": true,
+                  "opacity": 1,
+                  "blendMode": "NORMAL",
+                  "color": {
+                    "r": 0.8980392217636108,
+                    "g": 0.9058823585510254,
+                    "b": 0.9215686321258545
+                  },
+                  "boundVariables": {}
+                }
+              ],
+              "strokeWeight": 1,
+              "cornerRadius": 16,
+              "effects": [
+                {
+                  "type": "DROP_SHADOW",
+                  "visible": true,
+                  "radius": 15,
+                  "boundVariables": {},
+                  "color": {
+                    "r": 0,
+                    "g": 0,
+                    "b": 0,
+                    "a": 0.10000000149011612
+                  },
+                  "offset": {
+                    "x": 0,
+                    "y": 10
+                  },
+                  "spread": 0,
+                  "blendMode": "NORMAL",
+                  "showShadowBehindNode": true
+                },
+                {
+                  "type": "DROP_SHADOW",
+                  "visible": true,
+                  "radius": 6,
+                  "boundVariables": {},
+                  "color": {
+                    "r": 0,
+                    "g": 0,
+                    "b": 0,
+                    "a": 0.10000000149011612
+                  },
+                  "offset": {
+                    "x": 0,
+                    "y": 4
+                  },
+                  "spread": 0,
+                  "blendMode": "NORMAL",
+                  "showShadowBehindNode": true
+                }
+              ],
+              "blendMode": "PASS_THROUGH",
+              "layoutAlign": "INHERIT",
+              "layoutGrow": 0,
+              "layoutMode": "NONE",
+              "itemSpacing": 0,
+              "children": [
+                {
+                  "id": "19:1326",
+                  "name": "div",
+                  "type": "FRAME",
+                  "x": 33,
+                  "y": 33,
+                  "width": 414,
+                  "height": 124,
+                  "relativeTransform": [
+                    [1, 0, 33],
+                    [0, 1, 33]
+                  ],
+                  "constraints": {
+                    "horizontal": "MIN",
+                    "vertical": "MIN"
+                  },
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "visible": true,
+                      "opacity": 0,
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0
+                      },
+                      "boundVariables": {}
+                    }
+                  ],
+                  "strokes": [
+                    {
+                      "type": "SOLID",
+                      "visible": true,
+                      "opacity": 1,
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 0.8980392217636108,
+                        "g": 0.9058823585510254,
+                        "b": 0.9215686321258545
+                      },
+                      "boundVariables": {}
+                    }
+                  ],
+                  "strokeWeight": 0,
+                  "cornerRadius": 0,
+                  "effects": [],
+                  "blendMode": "PASS_THROUGH",
+                  "layoutAlign": "INHERIT",
+                  "layoutGrow": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "children": [
+                    {
+                      "id": "19:1328",
+                      "name": "div",
+                      "type": "FRAME",
+                      "x": 0,
+                      "y": 0,
+                      "width": 414,
+                      "height": 48,
+                      "relativeTransform": [
+                        [1, 0, 0],
+                        [0, 1, 0]
+                      ],
+                      "constraints": {
+                        "horizontal": "MIN",
+                        "vertical": "MIN"
+                      },
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 0,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0,
+                            "g": 0,
+                            "b": 0
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokes": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.8980392217636108,
+                            "g": 0.9058823585510254,
+                            "b": 0.9215686321258545
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokeWeight": 0,
+                      "cornerRadius": 0,
+                      "effects": [],
+                      "blendMode": "PASS_THROUGH",
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0,
+                      "layoutMode": "NONE",
+                      "itemSpacing": 0,
+                      "children": [
+                        {
+                          "id": "19:1338",
+                          "name": "div",
+                          "type": "FRAME",
+                          "x": 183,
+                          "y": 0,
+                          "width": 48,
+                          "height": 48,
+                          "relativeTransform": [
+                            [1, 0, 183],
+                            [0, 1, 0]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0.5372549295425415,
+                                "b": 0.48235294222831726
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 8,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1350",
+                              "name": "i",
+                              "type": "FRAME",
+                              "x": 14,
+                              "y": 10,
+                              "width": 20,
+                              "height": 28,
+                              "relativeTransform": [
+                                [1, 0, 14],
+                                [0, 1, 10]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 0,
+                              "cornerRadius": 0,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1376",
+                                  "name": "svg",
+                                  "type": "FRAME",
+                                  "x": 0,
+                                  "y": 3.5,
+                                  "width": 20,
+                                  "height": 20,
+                                  "relativeTransform": [
+                                    [1, 0, 0],
+                                    [0, 1, 3.5]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": false,
+                                      "opacity": 0,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 1,
+                                        "g": 1,
+                                        "b": 1
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [],
+                                  "strokeWeight": 1,
+                                  "cornerRadius": 0,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "HORIZONTAL",
+                                  "itemSpacing": 0,
+                                  "children": [
+                                    {
+                                      "id": "19:1377",
+                                      "name": "Frame",
+                                      "type": "FRAME",
+                                      "x": 0,
+                                      "y": 0,
+                                      "width": 20,
+                                      "height": 20,
+                                      "relativeTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "constraints": {
+                                        "horizontal": "MIN",
+                                        "vertical": "MIN"
+                                      },
+                                      "fills": [
+                                        {
+                                          "type": "SOLID",
+                                          "visible": true,
+                                          "opacity": 0,
+                                          "blendMode": "NORMAL",
+                                          "color": {
+                                            "r": 0,
+                                            "g": 0,
+                                            "b": 0
+                                          },
+                                          "boundVariables": {}
+                                        }
+                                      ],
+                                      "strokes": [
+                                        {
+                                          "type": "SOLID",
+                                          "visible": true,
+                                          "opacity": 1,
+                                          "blendMode": "NORMAL",
+                                          "color": {
+                                            "r": 0.8980392217636108,
+                                            "g": 0.9058823585510254,
+                                            "b": 0.9215686321258545
+                                          },
+                                          "boundVariables": {}
+                                        }
+                                      ],
+                                      "strokeWeight": 0,
+                                      "cornerRadius": 0,
+                                      "effects": [],
+                                      "blendMode": "PASS_THROUGH",
+                                      "layoutAlign": "INHERIT",
+                                      "layoutGrow": 0,
+                                      "layoutMode": "NONE",
+                                      "itemSpacing": 0,
+                                      "children": [
+                                        {
+                                          "id": "19:1378",
+                                          "name": "Vector",
+                                          "type": "VECTOR",
+                                          "x": 0.0023079984821379185,
+                                          "y": 1.2518031597137451,
+                                          "width": 19.995580673217773,
+                                          "height": 17.49819564819336,
+                                          "relativeTransform": [
+                                            [1, 0, 0.0023079984821379185],
+                                            [0, 1, 1.2518031597137451]
+                                          ],
+                                          "constraints": {
+                                            "horizontal": "SCALE",
+                                            "vertical": "SCALE"
+                                          },
+                                          "fills": [
+                                            {
+                                              "type": "SOLID",
+                                              "visible": true,
+                                              "opacity": 1,
+                                              "blendMode": "NORMAL",
+                                              "color": {
+                                                "r": 1,
+                                                "g": 1,
+                                                "b": 1
+                                              },
+                                              "boundVariables": {}
+                                            }
+                                          ],
+                                          "strokes": [],
+                                          "strokeWeight": 0.0390625,
+                                          "cornerRadius": 0,
+                                          "effects": [],
+                                          "blendMode": "PASS_THROUGH",
+                                          "layoutAlign": "INHERIT",
+                                          "layoutGrow": 0,
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "19:1330",
+                      "name": "Criar Senha - Primeiro Acesso",
+                      "type": "TEXT",
+                      "x": 32.671875,
+                      "y": 59.2400016784668,
+                      "width": 348,
+                      "height": 32,
+                      "relativeTransform": [
+                        [1, 0, 32.671875],
+                        [0, 1, 59.2400016784668]
+                      ],
+                      "constraints": {
+                        "horizontal": "MIN",
+                        "vertical": "MIN"
+                      },
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.06666667014360428,
+                            "g": 0.0941176488995552,
+                            "b": 0.15294118225574493
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokes": [],
+                      "strokeWeight": 1,
+                      "effects": [],
+                      "blendMode": "PASS_THROUGH",
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0,
+                      "children": []
+                    },
+                    {
+                      "id": "19:1332",
+                      "name": "Complete seu perfil para começar a usar o PetBook",
+                      "type": "TEXT",
+                      "x": 35.109375,
+                      "y": 102.80000305175781,
+                      "width": 341,
+                      "height": 20,
+                      "relativeTransform": [
+                        [1, 0, 35.109375],
+                        [0, 1, 102.80000305175781]
+                      ],
+                      "constraints": {
+                        "horizontal": "MIN",
+                        "vertical": "MIN"
+                      },
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.29411765933036804,
+                            "g": 0.3333333432674408,
+                            "b": 0.38823530077934265
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokes": [],
+                      "strokeWeight": 1,
+                      "effects": [],
+                      "blendMode": "PASS_THROUGH",
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0,
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "id": "19:1327",
+                  "name": "form",
+                  "type": "FRAME",
+                  "x": 33,
+                  "y": 189,
+                  "width": 414,
+                  "height": 626,
+                  "relativeTransform": [
+                    [1, 0, 33],
+                    [0, 1, 189]
+                  ],
+                  "constraints": {
+                    "horizontal": "MIN",
+                    "vertical": "MIN"
+                  },
+                  "fills": [
+                    {
+                      "type": "SOLID",
+                      "visible": true,
+                      "opacity": 0,
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 0,
+                        "g": 0,
+                        "b": 0
+                      },
+                      "boundVariables": {}
+                    }
+                  ],
+                  "strokes": [
+                    {
+                      "type": "SOLID",
+                      "visible": true,
+                      "opacity": 1,
+                      "blendMode": "NORMAL",
+                      "color": {
+                        "r": 0.8980392217636108,
+                        "g": 0.9058823585510254,
+                        "b": 0.9215686321258545
+                      },
+                      "boundVariables": {}
+                    }
+                  ],
+                  "strokeWeight": 0,
+                  "cornerRadius": 0,
+                  "effects": [],
+                  "blendMode": "PASS_THROUGH",
+                  "layoutAlign": "INHERIT",
+                  "layoutGrow": 0,
+                  "layoutMode": "NONE",
+                  "itemSpacing": 0,
+                  "children": [
+                    {
+                      "id": "19:1333",
+                      "name": "div",
+                      "type": "FRAME",
+                      "x": 0,
+                      "y": 0,
+                      "width": 414,
+                      "height": 78,
+                      "relativeTransform": [
+                        [1, 0, 0],
+                        [0, 1, 0]
+                      ],
+                      "constraints": {
+                        "horizontal": "MIN",
+                        "vertical": "MIN"
+                      },
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 0,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0,
+                            "g": 0,
+                            "b": 0
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokes": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.8980392217636108,
+                            "g": 0.9058823585510254,
+                            "b": 0.9215686321258545
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokeWeight": 0,
+                      "cornerRadius": 0,
+                      "effects": [],
+                      "blendMode": "PASS_THROUGH",
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0,
+                      "layoutMode": "NONE",
+                      "itemSpacing": 0,
+                      "children": [
+                        {
+                          "id": "19:1339",
+                          "name": "label",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 0,
+                          "width": 414,
+                          "height": 20,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 0]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 0,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 0,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1352",
+                              "name": "Nome Completo *",
+                              "type": "TEXT",
+                              "x": 0,
+                              "y": -0.10000000149011612,
+                              "width": 120,
+                              "height": 20,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, -0.10000000149011612]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.21568627655506134,
+                                    "g": 0.2549019753932953,
+                                    "b": 0.3176470696926117
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [],
+                              "strokeWeight": 1,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "id": "19:1340",
+                          "name": "input",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 28,
+                          "width": 414,
+                          "height": 50,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 28]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 1,
+                                "g": 1,
+                                "b": 1
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8196078538894653,
+                                "g": 0.8352941274642944,
+                                "b": 0.8588235378265381
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 1,
+                          "cornerRadius": 8,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1354",
+                              "name": "Digite seu nome completo",
+                              "type": "TEXT",
+                              "x": 16,
+                              "y": 0,
+                              "width": 197,
+                              "height": 50,
+                              "relativeTransform": [
+                                [1, 0, 16],
+                                [0, 1, 0]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.6784313917160034,
+                                    "g": 0.6823529601097107,
+                                    "b": 0.7372549176216125
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [],
+                              "strokeWeight": 1,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "19:1334",
+                      "name": "div",
+                      "type": "FRAME",
+                      "x": 0,
+                      "y": 102,
+                      "width": 414,
+                      "height": 110,
+                      "relativeTransform": [
+                        [1, 0, 0],
+                        [0, 1, 102]
+                      ],
+                      "constraints": {
+                        "horizontal": "MIN",
+                        "vertical": "MIN"
+                      },
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 0,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0,
+                            "g": 0,
+                            "b": 0
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokes": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.8980392217636108,
+                            "g": 0.9058823585510254,
+                            "b": 0.9215686321258545
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokeWeight": 0,
+                      "cornerRadius": 0,
+                      "effects": [],
+                      "blendMode": "PASS_THROUGH",
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0,
+                      "layoutMode": "NONE",
+                      "itemSpacing": 0,
+                      "children": [
+                        {
+                          "id": "19:1341",
+                          "name": "label",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 0,
+                          "width": 414,
+                          "height": 20,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 0]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 0,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 0,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1356",
+                              "name": "Senha *",
+                              "type": "TEXT",
+                              "x": 0,
+                              "y": -0.10000000149011612,
+                              "width": 53,
+                              "height": 20,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, -0.10000000149011612]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.21568627655506134,
+                                    "g": 0.2549019753932953,
+                                    "b": 0.3176470696926117
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [],
+                              "strokeWeight": 1,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "id": "19:1342",
+                          "name": "div",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 28,
+                          "width": 414,
+                          "height": 50,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 28]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 0,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 0,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1357",
+                              "name": "button",
+                              "type": "FRAME",
+                              "x": 384,
+                              "y": 13,
+                              "width": 18,
+                              "height": 24,
+                              "relativeTransform": [
+                                [1, 0, 384],
+                                [0, 1, 13]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 0,
+                              "cornerRadius": 0,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1379",
+                                  "name": "Frame",
+                                  "type": "FRAME",
+                                  "x": 0,
+                                  "y": 4,
+                                  "width": 18,
+                                  "height": 16,
+                                  "relativeTransform": [
+                                    [1, 0, 0],
+                                    [0, 1, 4]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": false,
+                                      "opacity": 0,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 1,
+                                        "g": 1,
+                                        "b": 1
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [],
+                                  "strokeWeight": 1,
+                                  "cornerRadius": 0,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "HORIZONTAL",
+                                  "itemSpacing": 0,
+                                  "children": [
+                                    {
+                                      "id": "19:1380",
+                                      "name": "Frame",
+                                      "type": "FRAME",
+                                      "x": 0,
+                                      "y": 0,
+                                      "width": 18,
+                                      "height": 16,
+                                      "relativeTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "constraints": {
+                                        "horizontal": "MIN",
+                                        "vertical": "MIN"
+                                      },
+                                      "fills": [
+                                        {
+                                          "type": "SOLID",
+                                          "visible": true,
+                                          "opacity": 0,
+                                          "blendMode": "NORMAL",
+                                          "color": {
+                                            "r": 0,
+                                            "g": 0,
+                                            "b": 0
+                                          },
+                                          "boundVariables": {}
+                                        }
+                                      ],
+                                      "strokes": [
+                                        {
+                                          "type": "SOLID",
+                                          "visible": true,
+                                          "opacity": 1,
+                                          "blendMode": "NORMAL",
+                                          "color": {
+                                            "r": 0.8980392217636108,
+                                            "g": 0.9058823585510254,
+                                            "b": 0.9215686321258545
+                                          },
+                                          "boundVariables": {}
+                                        }
+                                      ],
+                                      "strokeWeight": 0,
+                                      "cornerRadius": 0,
+                                      "effects": [],
+                                      "blendMode": "PASS_THROUGH",
+                                      "layoutAlign": "INHERIT",
+                                      "layoutGrow": 0,
+                                      "layoutMode": "NONE",
+                                      "itemSpacing": 0,
+                                      "children": [
+                                        {
+                                          "id": "19:1381",
+                                          "name": "Vector",
+                                          "type": "VECTOR",
+                                          "x": 0.0007812511175870895,
+                                          "y": 1,
+                                          "width": 18.001562118530273,
+                                          "height": 14,
+                                          "relativeTransform": [
+                                            [1, 0, 0.0007812511175870895],
+                                            [0, 1, 1]
+                                          ],
+                                          "constraints": {
+                                            "horizontal": "SCALE",
+                                            "vertical": "SCALE"
+                                          },
+                                          "fills": [
+                                            {
+                                              "type": "SOLID",
+                                              "visible": true,
+                                              "opacity": 1,
+                                              "blendMode": "NORMAL",
+                                              "color": {
+                                                "r": 0.6117647290229797,
+                                                "g": 0.6392157077789307,
+                                                "b": 0.686274528503418
+                                              },
+                                              "boundVariables": {}
+                                            }
+                                          ],
+                                          "strokes": [],
+                                          "strokeWeight": 0.03125,
+                                          "cornerRadius": 0,
+                                          "effects": [],
+                                          "blendMode": "PASS_THROUGH",
+                                          "layoutAlign": "INHERIT",
+                                          "layoutGrow": 0,
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1358",
+                              "name": "input",
+                              "type": "FRAME",
+                              "x": 0,
+                              "y": 0,
+                              "width": 414,
+                              "height": 50,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, 0]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 1,
+                                    "g": 1,
+                                    "b": 1
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8196078538894653,
+                                    "g": 0.8352941274642944,
+                                    "b": 0.8588235378265381
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 1,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1383",
+                                  "name": "Digite sua senha",
+                                  "type": "TEXT",
+                                  "x": 16,
+                                  "y": 0,
+                                  "width": 126,
+                                  "height": 50,
+                                  "relativeTransform": [
+                                    [1, 0, 16],
+                                    [0, 1, 0]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.6784313917160034,
+                                        "g": 0.6823529601097107,
+                                        "b": 0.7372549176216125
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [],
+                                  "strokeWeight": 1,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        },
+                        {
+                          "id": "19:1343",
+                          "name": "div",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 86,
+                          "width": 414,
+                          "height": 24,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 86]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 0,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 0,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1359",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 0,
+                              "y": 0,
+                              "width": 414,
+                              "height": 4,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, 0]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 0,
+                              "cornerRadius": 0,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1384",
+                                  "name": "div",
+                                  "type": "FRAME",
+                                  "x": 0,
+                                  "y": 0,
+                                  "width": 100.5,
+                                  "height": 4,
+                                  "relativeTransform": [
+                                    [1, 0, 0],
+                                    [0, 1, 0]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 4,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                },
+                                {
+                                  "id": "19:1385",
+                                  "name": "div",
+                                  "type": "FRAME",
+                                  "x": 104.5,
+                                  "y": 0,
+                                  "width": 100.5,
+                                  "height": 4,
+                                  "relativeTransform": [
+                                    [1, 0, 104.5],
+                                    [0, 1, 0]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 4,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                },
+                                {
+                                  "id": "19:1386",
+                                  "name": "div",
+                                  "type": "FRAME",
+                                  "x": 209,
+                                  "y": 0,
+                                  "width": 100.5,
+                                  "height": 4,
+                                  "relativeTransform": [
+                                    [1, 0, 209],
+                                    [0, 1, 0]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 4,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                },
+                                {
+                                  "id": "19:1387",
+                                  "name": "div",
+                                  "type": "FRAME",
+                                  "x": 313.5,
+                                  "y": 0,
+                                  "width": 100.5,
+                                  "height": 4,
+                                  "relativeTransform": [
+                                    [1, 0, 313.5],
+                                    [0, 1, 0]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 4,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1361",
+                              "name": "Digite uma senha para ver a força",
+                              "type": "TEXT",
+                              "x": 0,
+                              "y": 6.559999942779541,
+                              "width": 191,
+                              "height": 16,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, 6.559999942779541]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.41960784792900085,
+                                    "g": 0.4470588266849518,
+                                    "b": 0.501960813999176
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [],
+                              "strokeWeight": 1,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "children": []
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "19:1335",
+                      "name": "div",
+                      "type": "FRAME",
+                      "x": 0,
+                      "y": 236,
+                      "width": 414,
+                      "height": 78,
+                      "relativeTransform": [
+                        [1, 0, 0],
+                        [0, 1, 236]
+                      ],
+                      "constraints": {
+                        "horizontal": "MIN",
+                        "vertical": "MIN"
+                      },
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 0,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0,
+                            "g": 0,
+                            "b": 0
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokes": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.8980392217636108,
+                            "g": 0.9058823585510254,
+                            "b": 0.9215686321258545
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokeWeight": 0,
+                      "cornerRadius": 0,
+                      "effects": [],
+                      "blendMode": "PASS_THROUGH",
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0,
+                      "layoutMode": "NONE",
+                      "itemSpacing": 0,
+                      "children": [
+                        {
+                          "id": "19:1344",
+                          "name": "label",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 0,
+                          "width": 414,
+                          "height": 20,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 0]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 0,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 0,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1363",
+                              "name": "Confirmar Senha *",
+                              "type": "TEXT",
+                              "x": 0,
+                              "y": -0.10000000149011612,
+                              "width": 124,
+                              "height": 20,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, -0.10000000149011612]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.21568627655506134,
+                                    "g": 0.2549019753932953,
+                                    "b": 0.3176470696926117
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [],
+                              "strokeWeight": 1,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "id": "19:1345",
+                          "name": "div",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 28,
+                          "width": 414,
+                          "height": 50,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 28]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 0,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 0,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1364",
+                              "name": "button",
+                              "type": "FRAME",
+                              "x": 384,
+                              "y": 13,
+                              "width": 18,
+                              "height": 24,
+                              "relativeTransform": [
+                                [1, 0, 384],
+                                [0, 1, 13]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 0,
+                              "cornerRadius": 0,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1388",
+                                  "name": "Frame",
+                                  "type": "FRAME",
+                                  "x": 0,
+                                  "y": 4,
+                                  "width": 18,
+                                  "height": 16,
+                                  "relativeTransform": [
+                                    [1, 0, 0],
+                                    [0, 1, 4]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": false,
+                                      "opacity": 0,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 1,
+                                        "g": 1,
+                                        "b": 1
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [],
+                                  "strokeWeight": 1,
+                                  "cornerRadius": 0,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "HORIZONTAL",
+                                  "itemSpacing": 0,
+                                  "children": [
+                                    {
+                                      "id": "19:1389",
+                                      "name": "Frame",
+                                      "type": "FRAME",
+                                      "x": 0,
+                                      "y": 0,
+                                      "width": 18,
+                                      "height": 16,
+                                      "relativeTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "constraints": {
+                                        "horizontal": "MIN",
+                                        "vertical": "MIN"
+                                      },
+                                      "fills": [
+                                        {
+                                          "type": "SOLID",
+                                          "visible": true,
+                                          "opacity": 0,
+                                          "blendMode": "NORMAL",
+                                          "color": {
+                                            "r": 0,
+                                            "g": 0,
+                                            "b": 0
+                                          },
+                                          "boundVariables": {}
+                                        }
+                                      ],
+                                      "strokes": [
+                                        {
+                                          "type": "SOLID",
+                                          "visible": true,
+                                          "opacity": 1,
+                                          "blendMode": "NORMAL",
+                                          "color": {
+                                            "r": 0.8980392217636108,
+                                            "g": 0.9058823585510254,
+                                            "b": 0.9215686321258545
+                                          },
+                                          "boundVariables": {}
+                                        }
+                                      ],
+                                      "strokeWeight": 0,
+                                      "cornerRadius": 0,
+                                      "effects": [],
+                                      "blendMode": "PASS_THROUGH",
+                                      "layoutAlign": "INHERIT",
+                                      "layoutGrow": 0,
+                                      "layoutMode": "NONE",
+                                      "itemSpacing": 0,
+                                      "children": [
+                                        {
+                                          "id": "19:1390",
+                                          "name": "Vector",
+                                          "type": "VECTOR",
+                                          "x": 0.0007812511175870895,
+                                          "y": 1,
+                                          "width": 18.001562118530273,
+                                          "height": 14,
+                                          "relativeTransform": [
+                                            [1, 0, 0.0007812511175870895],
+                                            [0, 1, 1]
+                                          ],
+                                          "constraints": {
+                                            "horizontal": "SCALE",
+                                            "vertical": "SCALE"
+                                          },
+                                          "fills": [
+                                            {
+                                              "type": "SOLID",
+                                              "visible": true,
+                                              "opacity": 1,
+                                              "blendMode": "NORMAL",
+                                              "color": {
+                                                "r": 0.6117647290229797,
+                                                "g": 0.6392157077789307,
+                                                "b": 0.686274528503418
+                                              },
+                                              "boundVariables": {}
+                                            }
+                                          ],
+                                          "strokes": [],
+                                          "strokeWeight": 0.03125,
+                                          "cornerRadius": 0,
+                                          "effects": [],
+                                          "blendMode": "PASS_THROUGH",
+                                          "layoutAlign": "INHERIT",
+                                          "layoutGrow": 0,
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1365",
+                              "name": "input",
+                              "type": "FRAME",
+                              "x": 0,
+                              "y": 0,
+                              "width": 414,
+                              "height": 50,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, 0]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 1,
+                                    "g": 1,
+                                    "b": 1
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8196078538894653,
+                                    "g": 0.8352941274642944,
+                                    "b": 0.8588235378265381
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 1,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1392",
+                                  "name": "Confirme sua senha",
+                                  "type": "TEXT",
+                                  "x": 16,
+                                  "y": 0,
+                                  "width": 151,
+                                  "height": 50,
+                                  "relativeTransform": [
+                                    [1, 0, 16],
+                                    [0, 1, 0]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.6784313917160034,
+                                        "g": 0.6823529601097107,
+                                        "b": 0.7372549176216125
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [],
+                                  "strokeWeight": 1,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "19:1336",
+                      "name": "div",
+                      "type": "FRAME",
+                      "x": 0,
+                      "y": 338,
+                      "width": 414,
+                      "height": 216,
+                      "relativeTransform": [
+                        [1, 0, 0],
+                        [0, 1, 338]
+                      ],
+                      "constraints": {
+                        "horizontal": "MIN",
+                        "vertical": "MIN"
+                      },
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 0,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0,
+                            "g": 0,
+                            "b": 0
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokes": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.8980392217636108,
+                            "g": 0.9058823585510254,
+                            "b": 0.9215686321258545
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokeWeight": 0,
+                      "cornerRadius": 0,
+                      "effects": [],
+                      "blendMode": "PASS_THROUGH",
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0,
+                      "layoutMode": "NONE",
+                      "itemSpacing": 0,
+                      "children": [
+                        {
+                          "id": "19:1346",
+                          "name": "label",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 0,
+                          "width": 414,
+                          "height": 20,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 0]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 0,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 0,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1367",
+                              "name": "Escolha seu Avatar",
+                              "type": "TEXT",
+                              "x": 0,
+                              "y": -0.10000000149011612,
+                              "width": 127,
+                              "height": 20,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, -0.10000000149011612]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.21568627655506134,
+                                    "g": 0.2549019753932953,
+                                    "b": 0.3176470696926117
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [],
+                              "strokeWeight": 1,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "id": "19:1347",
+                          "name": "div",
+                          "type": "FRAME",
+                          "x": 0,
+                          "y": 32,
+                          "width": 414,
+                          "height": 184,
+                          "relativeTransform": [
+                            [1, 0, 0],
+                            [0, 1, 32]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 0,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0,
+                                "g": 0,
+                                "b": 0
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.8980392217636108,
+                                "g": 0.9058823585510254,
+                                "b": 0.9215686321258545
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokeWeight": 0,
+                          "cornerRadius": 0,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "layoutMode": "NONE",
+                          "itemSpacing": 0,
+                          "children": [
+                            {
+                              "id": "19:1368",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 0,
+                              "y": 0,
+                              "width": 94.5,
+                              "height": 104,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, 0]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 2,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1393",
+                                  "name": "Frame",
+                                  "type": "FRAME",
+                                  "x": 32.25,
+                                  "y": 16.75,
+                                  "width": 30,
+                                  "height": 30,
+                                  "relativeTransform": [
+                                    [1, 0, 32.25],
+                                    [0, 1, 16.75]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": false,
+                                      "opacity": 0,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 1,
+                                        "g": 1,
+                                        "b": 1
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [],
+                                  "strokeWeight": 1,
+                                  "cornerRadius": 0,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "HORIZONTAL",
+                                  "itemSpacing": 0,
+                                  "children": [
+                                    {
+                                      "id": "19:1394",
+                                      "name": "Frame",
+                                      "type": "FRAME",
+                                      "x": 0,
+                                      "y": 0,
+                                      "width": 30,
+                                      "height": 30,
+                                      "relativeTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "constraints": {
+                                        "horizontal": "MIN",
+                                        "vertical": "MIN"
+                                      },
+                                      "fills": [
+                                        {
+                                          "type": "SOLID",
+                                          "visible": true,
+                                          "opacity": 0,
+                                          "blendMode": "NORMAL",
+                                          "color": {
+                                            "r": 0,
+                                            "g": 0,
+                                            "b": 0
+                                          },
+                                          "boundVariables": {}
+                                        }
+                                      ],
+                                      "strokes": [
+                                        {
+                                          "type": "SOLID",
+                                          "visible": true,
+                                          "opacity": 1,
+                                          "blendMode": "NORMAL",
+                                          "color": {
+                                            "r": 0.8980392217636108,
+                                            "g": 0.9058823585510254,
+                                            "b": 0.9215686321258545
+                                          },
+                                          "boundVariables": {}
+                                        }
+                                      ],
+                                      "strokeWeight": 0,
+                                      "cornerRadius": 0,
+                                      "effects": [],
+                                      "blendMode": "PASS_THROUGH",
+                                      "layoutAlign": "INHERIT",
+                                      "layoutGrow": 0,
+                                      "layoutMode": "NONE",
+                                      "itemSpacing": 0,
+                                      "children": [
+                                        {
+                                          "id": "19:1395",
+                                          "name": "Vector",
+                                          "type": "VECTOR",
+                                          "x": 0,
+                                          "y": 0,
+                                          "width": 30,
+                                          "height": 30,
+                                          "relativeTransform": [
+                                            [1, 0, 0],
+                                            [0, 1, 0]
+                                          ],
+                                          "constraints": {
+                                            "horizontal": "SCALE",
+                                            "vertical": "SCALE"
+                                          },
+                                          "fills": [
+                                            {
+                                              "type": "SOLID",
+                                              "visible": true,
+                                              "opacity": 1,
+                                              "blendMode": "NORMAL",
+                                              "color": {
+                                                "r": 0.6117647290229797,
+                                                "g": 0.6392157077789307,
+                                                "b": 0.686274528503418
+                                              },
+                                              "boundVariables": {}
+                                            }
+                                          ],
+                                          "strokes": [],
+                                          "strokeWeight": 0.05859375,
+                                          "cornerRadius": 0,
+                                          "effects": [],
+                                          "blendMode": "PASS_THROUGH",
+                                          "layoutAlign": "INHERIT",
+                                          "layoutGrow": 0,
+                                          "children": []
+                                        }
+                                      ]
+                                    }
+                                  ]
+                                },
+                                {
+                                  "id": "19:1398",
+                                  "name": "Usar padrão",
+                                  "type": "TEXT",
+                                  "x": 14,
+                                  "y": 59.12000274658203,
+                                  "width": 44,
+                                  "height": 32,
+                                  "relativeTransform": [
+                                    [1, 0, 14],
+                                    [0, 1, 59.12000274658203]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.29411765933036804,
+                                        "g": 0.3333333432674408,
+                                        "b": 0.38823530077934265
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokes": [],
+                                  "strokeWeight": 1,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1369",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 106.5,
+                              "y": 0,
+                              "width": 94.5,
+                              "height": 104,
+                              "relativeTransform": [
+                                [1, 0, 106.5],
+                                [0, 1, 0]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 2,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1399",
+                                  "name": "img",
+                                  "type": "FRAME",
+                                  "x": 23.25,
+                                  "y": 10,
+                                  "width": 48,
+                                  "height": 48,
+                                  "relativeTransform": [
+                                    [1, 0, 23.25],
+                                    [0, 1, 10]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "IMAGE",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "scaleMode": "FILL",
+                                      "imageTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "scalingFactor": 1,
+                                      "rotation": 0,
+                                      "filters": {
+                                        "exposure": 0,
+                                        "contrast": 0,
+                                        "saturation": 0,
+                                        "temperature": 0,
+                                        "tint": 0,
+                                        "highlights": 0,
+                                        "shadows": 0
+                                      },
+                                      "imageHash": "f578f9c2a181ef669150341163e63e6e9da01878"
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 9999,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1370",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 213,
+                              "y": 0,
+                              "width": 94.5,
+                              "height": 104,
+                              "relativeTransform": [
+                                [1, 0, 213],
+                                [0, 1, 0]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 2,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1400",
+                                  "name": "img",
+                                  "type": "FRAME",
+                                  "x": 23.25,
+                                  "y": 10,
+                                  "width": 48,
+                                  "height": 48,
+                                  "relativeTransform": [
+                                    [1, 0, 23.25],
+                                    [0, 1, 10]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "IMAGE",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "scaleMode": "FILL",
+                                      "imageTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "scalingFactor": 1,
+                                      "rotation": 0,
+                                      "filters": {
+                                        "exposure": 0,
+                                        "contrast": 0,
+                                        "saturation": 0,
+                                        "temperature": 0,
+                                        "tint": 0,
+                                        "highlights": 0,
+                                        "shadows": 0
+                                      },
+                                      "imageHash": "410c340aa057242400c608368f918307cdd72438"
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 9999,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1371",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 319.5,
+                              "y": 0,
+                              "width": 94.5,
+                              "height": 104,
+                              "relativeTransform": [
+                                [1, 0, 319.5],
+                                [0, 1, 0]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 2,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1401",
+                                  "name": "img",
+                                  "type": "FRAME",
+                                  "x": 23.25,
+                                  "y": 10,
+                                  "width": 48,
+                                  "height": 48,
+                                  "relativeTransform": [
+                                    [1, 0, 23.25],
+                                    [0, 1, 10]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "IMAGE",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "scaleMode": "FILL",
+                                      "imageTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "scalingFactor": 1,
+                                      "rotation": 0,
+                                      "filters": {
+                                        "exposure": 0,
+                                        "contrast": 0,
+                                        "saturation": 0,
+                                        "temperature": 0,
+                                        "tint": 0,
+                                        "highlights": 0,
+                                        "shadows": 0
+                                      },
+                                      "imageHash": "1d5ad8aaf12fd61a75197f707f6ef40c7edd6e1f"
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 9999,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1372",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 0,
+                              "y": 116,
+                              "width": 94.5,
+                              "height": 68,
+                              "relativeTransform": [
+                                [1, 0, 0],
+                                [0, 1, 116]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 2,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1402",
+                                  "name": "img",
+                                  "type": "FRAME",
+                                  "x": 23.25,
+                                  "y": 10,
+                                  "width": 48,
+                                  "height": 48,
+                                  "relativeTransform": [
+                                    [1, 0, 23.25],
+                                    [0, 1, 10]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "IMAGE",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "scaleMode": "FILL",
+                                      "imageTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "scalingFactor": 1,
+                                      "rotation": 0,
+                                      "filters": {
+                                        "exposure": 0,
+                                        "contrast": 0,
+                                        "saturation": 0,
+                                        "temperature": 0,
+                                        "tint": 0,
+                                        "highlights": 0,
+                                        "shadows": 0
+                                      },
+                                      "imageHash": "1ecb12199697dd16c82152392c0b02a04bd85271"
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 9999,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1373",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 106.5,
+                              "y": 116,
+                              "width": 94.5,
+                              "height": 68,
+                              "relativeTransform": [
+                                [1, 0, 106.5],
+                                [0, 1, 116]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 2,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1403",
+                                  "name": "img",
+                                  "type": "FRAME",
+                                  "x": 23.25,
+                                  "y": 10,
+                                  "width": 48,
+                                  "height": 48,
+                                  "relativeTransform": [
+                                    [1, 0, 23.25],
+                                    [0, 1, 10]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "IMAGE",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "scaleMode": "FILL",
+                                      "imageTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "scalingFactor": 1,
+                                      "rotation": 0,
+                                      "filters": {
+                                        "exposure": 0,
+                                        "contrast": 0,
+                                        "saturation": 0,
+                                        "temperature": 0,
+                                        "tint": 0,
+                                        "highlights": 0,
+                                        "shadows": 0
+                                      },
+                                      "imageHash": "ec901f1c0d6bdc3abb3b7f2578c96a444ee001e2"
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 9999,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1374",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 213,
+                              "y": 116,
+                              "width": 94.5,
+                              "height": 68,
+                              "relativeTransform": [
+                                [1, 0, 213],
+                                [0, 1, 116]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 2,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1404",
+                                  "name": "img",
+                                  "type": "FRAME",
+                                  "x": 23.25,
+                                  "y": 10,
+                                  "width": 48,
+                                  "height": 48,
+                                  "relativeTransform": [
+                                    [1, 0, 23.25],
+                                    [0, 1, 10]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "IMAGE",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "scaleMode": "FILL",
+                                      "imageTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "scalingFactor": 1,
+                                      "rotation": 0,
+                                      "filters": {
+                                        "exposure": 0,
+                                        "contrast": 0,
+                                        "saturation": 0,
+                                        "temperature": 0,
+                                        "tint": 0,
+                                        "highlights": 0,
+                                        "shadows": 0
+                                      },
+                                      "imageHash": "93261e682a4fc24925831eb042e025379dab45ab"
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 9999,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                }
+                              ]
+                            },
+                            {
+                              "id": "19:1375",
+                              "name": "div",
+                              "type": "FRAME",
+                              "x": 319.5,
+                              "y": 116,
+                              "width": 94.5,
+                              "height": 68,
+                              "relativeTransform": [
+                                [1, 0, 319.5],
+                                [0, 1, 116]
+                              ],
+                              "constraints": {
+                                "horizontal": "MIN",
+                                "vertical": "MIN"
+                              },
+                              "fills": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 0,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0,
+                                    "g": 0,
+                                    "b": 0
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokes": [
+                                {
+                                  "type": "SOLID",
+                                  "visible": true,
+                                  "opacity": 1,
+                                  "blendMode": "NORMAL",
+                                  "color": {
+                                    "r": 0.8980392217636108,
+                                    "g": 0.9058823585510254,
+                                    "b": 0.9215686321258545
+                                  },
+                                  "boundVariables": {}
+                                }
+                              ],
+                              "strokeWeight": 2,
+                              "cornerRadius": 8,
+                              "effects": [],
+                              "blendMode": "PASS_THROUGH",
+                              "layoutAlign": "INHERIT",
+                              "layoutGrow": 0,
+                              "layoutMode": "NONE",
+                              "itemSpacing": 0,
+                              "children": [
+                                {
+                                  "id": "19:1405",
+                                  "name": "img",
+                                  "type": "FRAME",
+                                  "x": 23.25,
+                                  "y": 10,
+                                  "width": 48,
+                                  "height": 48,
+                                  "relativeTransform": [
+                                    [1, 0, 23.25],
+                                    [0, 1, 10]
+                                  ],
+                                  "constraints": {
+                                    "horizontal": "MIN",
+                                    "vertical": "MIN"
+                                  },
+                                  "fills": [
+                                    {
+                                      "type": "IMAGE",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "scaleMode": "FILL",
+                                      "imageTransform": [
+                                        [1, 0, 0],
+                                        [0, 1, 0]
+                                      ],
+                                      "scalingFactor": 1,
+                                      "rotation": 0,
+                                      "filters": {
+                                        "exposure": 0,
+                                        "contrast": 0,
+                                        "saturation": 0,
+                                        "temperature": 0,
+                                        "tint": 0,
+                                        "highlights": 0,
+                                        "shadows": 0
+                                      },
+                                      "imageHash": "6528ea7852c4088f59481c9e231938f441876daf"
+                                    }
+                                  ],
+                                  "strokes": [
+                                    {
+                                      "type": "SOLID",
+                                      "visible": true,
+                                      "opacity": 1,
+                                      "blendMode": "NORMAL",
+                                      "color": {
+                                        "r": 0.8980392217636108,
+                                        "g": 0.9058823585510254,
+                                        "b": 0.9215686321258545
+                                      },
+                                      "boundVariables": {}
+                                    }
+                                  ],
+                                  "strokeWeight": 0,
+                                  "cornerRadius": 9999,
+                                  "effects": [],
+                                  "blendMode": "PASS_THROUGH",
+                                  "layoutAlign": "INHERIT",
+                                  "layoutGrow": 0,
+                                  "layoutMode": "NONE",
+                                  "itemSpacing": 0,
+                                  "children": []
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "id": "19:1337",
+                      "name": "button",
+                      "type": "FRAME",
+                      "x": 0,
+                      "y": 578,
+                      "width": 414,
+                      "height": 48,
+                      "relativeTransform": [
+                        [1, 0, 0],
+                        [0, 1, 578]
+                      ],
+                      "constraints": {
+                        "horizontal": "MIN",
+                        "vertical": "MIN"
+                      },
+                      "fills": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.8196078538894653,
+                            "g": 0.8352941274642944,
+                            "b": 0.8588235378265381
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokes": [
+                        {
+                          "type": "SOLID",
+                          "visible": true,
+                          "opacity": 1,
+                          "blendMode": "NORMAL",
+                          "color": {
+                            "r": 0.8980392217636108,
+                            "g": 0.9058823585510254,
+                            "b": 0.9215686321258545
+                          },
+                          "boundVariables": {}
+                        }
+                      ],
+                      "strokeWeight": 0,
+                      "cornerRadius": 8,
+                      "effects": [],
+                      "blendMode": "PASS_THROUGH",
+                      "layoutAlign": "INHERIT",
+                      "layoutGrow": 0,
+                      "layoutMode": "NONE",
+                      "itemSpacing": 0,
+                      "children": [
+                        {
+                          "id": "19:1349",
+                          "name": "Começar",
+                          "type": "TEXT",
+                          "x": 172.15625,
+                          "y": 12.5600004196167,
+                          "width": 70,
+                          "height": 24,
+                          "relativeTransform": [
+                            [1, 0, 172.15625],
+                            [0, 1, 12.5600004196167]
+                          ],
+                          "constraints": {
+                            "horizontal": "MIN",
+                            "vertical": "MIN"
+                          },
+                          "fills": [
+                            {
+                              "type": "SOLID",
+                              "visible": true,
+                              "opacity": 1,
+                              "blendMode": "NORMAL",
+                              "color": {
+                                "r": 0.41960784792900085,
+                                "g": 0.4470588266849518,
+                                "b": 0.501960813999176
+                              },
+                              "boundVariables": {}
+                            }
+                          ],
+                          "strokes": [],
+                          "strokeWeight": 1,
+                          "effects": [],
+                          "blendMode": "PASS_THROUGH",
+                          "layoutAlign": "INHERIT",
+                          "layoutGrow": 0,
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

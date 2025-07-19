@@ -1,0 +1,225 @@
+PetBook SaaS · Product Requirements Document (PRD)
+
+Overview
+PetBook digitaliza o Livro de Banho & Tosa exigido pela Vigilância Sanitária, eliminando fichas em papel e garantindo conformidade legal em poucos cliques. O produto é voltado para pet shops de pequeno e médio porte que precisam registrar serviços, evitar no‑show e apresentar documentos a fiscais a qualquer momento. Com um único tablet quiosque e uma aplicação web, groomers, atendentes e o dono da loja trabalham em fluxo contínuo e rastreável.
+
+Core Features
+
+#
+
+Feature | O que faz | Por que importa | Como funciona (alto nível)
+1 | Agenda & Fila Geral | Lista todos os banhos/tosas agendados do dia | Organiza trabalho e evita serviço perdido | Atendente agenda; no tablet, groomer clica Assumir → registro passa queued ➜ in\_progress
+2 | Registro (Livro) Wizard | Captura dados legais + fotos + assinatura digital | Cumpre regulamentação e protege contra multas | 4 passos: Foto antes → Dados animal → Produtos → Foto depois + PIN-assinatura
+3 | Assinatura Digital + PIN | Identifica groomer sem assinatura manual constante | Agilidade e validade jurídica | Groomer faz upload da assinatura no primeiro acesso; PIN confirma cada serviço; hash SHA-256 garante integridade
+4 | Exportação PDF/CSV | Gera livro completo para fiscais | Exigência de auditoria | Atendente/Owner exporta; evento auditado exported\_by, exported\_at
+5 | WhatsApp Lembretes | Lembra tutores 24 h antes | Reduz faltas | Supabase Cron → Twilio template Utility
+6 | Dashboard | KPIs em tempo real | Visão gerencial (ticket médio, pendências) | SSR query agregada + Recharts
+
+User Experience
+Personas
+• Owner – Proprietário; gerencia planos, usuários e relatórios
+• Atendente – Cadastra clientes, agenda serviços, exporta livro digital
+• Groomer – Executa serviços, registra fotos e conclui com PIN (assinatura digitalizada)
+• Fiscal – Papel externo ao sistema; acessa PDFs/CSVs gerados pelo sistema via atendimento manual
+
+Flows‑chave
+• Agendamento (Atendente) → Agenda dia/hora, serviço, pet.
+• Fila Geral (Tablet) → Groomer seleciona card ➜ digita PIN ➜ Foto antes ➜ Dados ➜ Produtos ➜ Foto depois & Assinatura (via PIN) ➜ Concluir.
+• Exportação → Botão Gerar PDF ➜ digita PIN ➜ download + log.
+
+UI/UX Considerações
+• Tablet 10″, touch targets ≥ 48 dp.
+• Cor Azul/ Laranja/ Verde para estados (queued/in\_progress/completed).
+• Modal PIN numérico, 3 tentativas, feedback claro.
+• Os **componentes compartilhados da aplicação devem ser desenvolvidos primeiro** (ex: botões, inputs, cabeçalho, layout de página, modais padrão, toasts, etc.) antes das páginas completas.
+• As **rotas da aplicação devem ser divididas em autenticadas e não autenticadas**:
+
+* Usuário autenticado → redirecionado para `/dashboard`
+* Usuário deslogado → redirecionado para `/login`
+  • A pasta `layout/` conterá arquivos nomeados de acordo com as telas (por tipo de usuário ou contexto) e deve ser usada como **referência visual e estrutural na construção das interfaces**.
+
+Technical Architecture
+Frontend: Next.js 14 (App Router) + shadcn/ui + Tailwind + PWA (next‑pwa) para modo quiosque.
+Backend‑as‑a‑Service: Supabase (PostgreSQL, Auth, Storage, Edge Functions, Cron).
+
+Data Models
+shops, users (roles, signature\_hash, pin\_hash, signature\_image\_url), pets, clients, appointments, groomings, audit\_logs.
+
+APIs & Integrations
+• Twilio WhatsApp Business (template Utility)
+• Resend (backup e‑mail)
+• Stripe (assinatura SaaS)
+
+Infrastructure
+• Vercel (SSR/Edge)
+• Supabase managed Postgres
+• Cloudinary (opcional) para compressão de imagens.
+• Security: Row‑Level Security por shop\_id, Argon2id para PINs, JWT cookies (httpOnly).
+
+Authentication & User Management
+A configuração completa de **login, cadastro e recuperação de senha** será desenvolvida com Supabase Auth. O fluxo inclui:
+• Cadastro com e-mail e senha via convite
+• Definição de perfis (owner, atendente, groomer) no banco de dados
+• Confirmação de conta via link de verificação enviado por e-mail
+• Recuperação de senha com link seguro via e-mail
+• Verificação de sessão via cookies httpOnly JWT
+📚 Documentação oficial de referência: [Supabase Auth docs](https://supabase.com/docs/guides/auth)
+
+Development Roadmap
+Phase 0 – Foundation
+• Repositório monorepo, Design Tokens → Tailwind
+• DB schema + RLS, Supabase project
+• Auth (invite, password, roles, confirmação de e-mail)
+• Desenvolvimento dos componentes principais compartilhados e configuração de rotas autenticadas vs públicas
+
+Phase 1 – MVP
+• Agenda & Fila Geral (UI + claim endpoint)
+• Wizard Registro completo (4 passos, upload da assinatura, PIN + hash SHA-256)
+• Exportação PDF/CSV
+• WhatsApp reminders (Edge Function + Cron)
+• Dash KPI (SSR)
+
+Phase 2 – Pós‑MVP
+• Plano Pro: Groomers ilimitados, WhatsApp Marketing
+• Programa de fidelidade (banho grátis N vezes)
+• Multi‑filial dashboard consolidado
+
+Logical Dependency Chain
+• DB + Auth → base para qualquer feature.
+• Design System / UI Shell → todos os componentes shared.
+• Agenda + Claim logic → necessário antes do Wizard.
+• Wizard Registro → depende de claim e assinatura digital.
+• Exportação → depende do registro concluído.
+• Dashboards & Reminders → podem viver depois que registro existe.
+
+Risks and Mitigations
+Risco | Mitigação
+Conflito de claim simultâneo | Transação UPDATE … WHERE status='queued' + check rows affected
+Fotos grandes lentas | Compress client‑side, limit 5 MB
+Groomer esquece PIN | Owner pode resetar; restrição login até redefinir
+Fiscal pede offline acesso | PDF export local; offline cache retirado do MVP (assumido conexão mínima)
+Over‑scope | PRD trancado; novos pedidos vão para Phase 2 backlog
+
+UI Inventory por Tipo de Usuário
+
+🧑‍💼 Owner
+
+1. Landing Page
+   Conteúdo: Call-to-action "Teste grátis", botão "Entrar", âncoras para seções (funcionalidades, preços, etc.)
+   Ações:
+   • "Teste grátis" → Rota de criação de conta (/signup)
+   • "Entrar" → Tela de Login
+
+2. Login
+   Conteúdo: Campo e-mail, senha, checkbox Termos, botão Entrar
+   Ações:
+   • Entrar → Redireciona para Onboarding (se for primeiro acesso) ou Dashboard
+
+3. Onboarding
+   Conteúdo: Wizard passo único:
+   • Nome da loja
+   • WhatsApp comercial
+   • Botão para importar CSV (opcional)
+   Ações:
+   • Finalizar → Vai para Dashboard
+
+4. Dashboard
+   Conteúdo: Cards de KPI: check-ins hoje, pendentes, concluídos, ticket médio
+   Ações:
+   • Clique em qualquer card → Filtra registros no Livro Digital
+
+5. Agenda (Gestão)
+   Conteúdo: Calendário semanal (semana atual), pets agendados
+   Ações:
+   • Drag and drop → Reagenda horário
+   • Clique em agendamento → Abre Drawer de Detalhe com ações: editar, cancelar
+
+6. Clientes & Pets
+   Conteúdo: Lista de clientes e seus pets
+   Ações:
+   • Cadastrar cliente → Abre Drawer com formulário
+   • Editar cliente ou pet → Abre Drawer
+   • Excluir → Modal de confirmação destrutiva
+
+7. Livro Digital
+   Conteúdo: Lista de atendimentos registrados
+   Ações:
+   • Filtro por data → Atualiza listagem
+   • Botão "Exportar" → Abre Modal de Exportação (escolha CSV ou PDF, digita PIN)
+
+8. Relatórios
+   Conteúdo: Tabela detalhada com filtros avançados
+   Ações:
+   • Filtro → Atualiza tabela
+   • Exportar → Modal de aviso de arquivo grande + Exportar CSV/PDF
+
+9. Configurações
+   Aba Loja: Nome, WhatsApp, horário de funcionamento
+   Aba Integrações: Chaves Twilio, Resend, Stripe
+   Aba Usuários: Lista de usuários / Convidar → Modal 2 passos (dados + assinatura/PIN ou pendente)
+   Aba Assinatura: Plano atual, status, botão "Gerenciar"
+
+10. Meu Perfil
+    Conteúdo: Nome, e-mail, foto, PIN
+    Ações:
+    • Editar dados → Salva
+    • Redefinir PIN → Abre Tela de PIN
+
+11. Tela Assinatura & PIN
+    Conteúdo: Canvas assinatura, campo PIN
+    Ações: Salva e volta ao perfil
+
+👩‍💻 Atendente
+(Mesmas telas do Owner com algumas restrições)
+Tem acesso a: Login, Dashboard, Agenda, Clientes & Pets, Livro Digital, Relatórios, Meu Perfil, PIN.
+Não vê: Aba Integrações ou Assinatura nas Configurações
+Exportar Livro: Exige PIN pessoal (modal)
+
+🧑‍🔧 Groomer
+
+1. Login (Primeiro Acesso)
+   Conteúdo: Criação de senha + assinatura + PIN
+   Ações: Após salvar → Redireciona para App Kiosk (Tablet)
+
+2. App Kiosk – Selecionar Groomer
+   Conteúdo: Grade com avatares dos groomers
+   Ações:
+   • Seleciona avatar → Abre Modal PIN
+
+3. Modal PIN (Claim)
+   Conteúdo: Digita PIN
+   Ações:
+   • PIN correto → Abre Fila Geral
+
+4. Fila Geral
+   Conteúdo: Lista de pets em queued
+   Ações:
+   • Clicar "Assumir" → Atualiza status para in\_progress e inicia Wizard Grooming
+
+5. Wizard Grooming
+   Passo 1: Foto Antes
+   Passo 2: Dados do Animal
+   Passo 3: Produtos utilizados
+   Passo 4: Foto Depois + PIN
+   Ações: "Concluir Atendimento" → Salva registro completo no Livro Digital
+
+6. Meus Atendimentos
+   Conteúdo: Lista de serviços in\_progress ou concluídos
+   Ações:
+   • "Continuar" → Reabre o Wizard Grooming
+   • "Cancelar" → Abre Modal de confirmação destrutiva
+
+7. Meu Perfil
+   Conteúdo: Nome, avatar, redefinir PIN
+   Ações: Salva dados
+
+📌 Modais Globais
+• Modal PIN: Digitação do PIN, 3 tentativas, bloqueio temporário se erro
+• Modal Exportação: Escolha entre PDF/CSV, PIN obrigatório
+• Modal Confirmação destrutiva: Exige digitar palavra-chave para deletar
+• Erro 410: Convite expirado → Botão "Reenviar convite"
+
+Appendix
+• Pesquisa CRMV & Vigilância Sanitária – requisitos mínimos de registro.
+• Figma links: Design System, Landing Page, Kiosk flow.
+• SQL migrations v1 (incluídas em /db/migrations).

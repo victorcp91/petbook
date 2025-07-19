@@ -1,0 +1,22 @@
+{
+  "name": "PetBook - Livro Digital de Banho & Tosa",
+  "short_name": "PetBook",
+  "description": "Digitalize o Livro de Banho & Tosa exigido pela Vigilância Sanitária",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+} 

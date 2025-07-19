@@ -1855,3 +1855,111 @@
 2025-07-19T17:54:31.282067Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
 2025-07-19T17:54:32.282993Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/.next/_events.json")}
 2025-07-19T17:54:32.283015Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T17:54:58.082506Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/.next/trace")}
+2025-07-19T17:54:58.082521Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T17:57:56.984617Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth"), AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignInForm.test.tsx")}
+2025-07-19T17:57:56.984635Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T17:57:57.084938Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/.next/server/app/page_client-reference-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/static/development/_buildManifest.js"), AnchoredSystemPathBuf("apps/web/.next/static/chunks/app/layout.js"), AnchoredSystemPathBuf("apps/web/.next/server/next-font-manifest.json"), AnchoredSystemPathBuf("apps/web/.next/build-manifest.json"), AnchoredSystemPathBuf("apps/web/.next/static/webpack/app/layout.0f3394a99342e87b.hot-update.js"), AnchoredSystemPathBuf("apps/web/.next/static/chunks/webpack.js"), AnchoredSystemPathBuf("apps/web/.next/server/middleware-react-loadable-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/server/middleware-build-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/static/development/_ssgManifest.js"), AnchoredSystemPathBuf("apps/web/.next/app-build-manifest.json"), AnchoredSystemPathBuf("apps/web/.next/static/webpack/0f3394a99342e87b.webpack.hot-update.json"), AnchoredSystemPathBuf("apps/web/.next/react-loadable-manifest.json"), AnchoredSystemPathBuf("apps/web/.next/server/next-font-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/server/app/auth/signup/page_client-reference-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/static/webpack/webpack.0f3394a99342e87b.hot-update.js")}
+2025-07-19T17:57:57.084955Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T17:57:59.384312Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignInForm.test.tsx")}
+2025-07-19T17:57:59.384340Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T17:57:59.583900Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/.next/build-manifest.json"), AnchoredSystemPathBuf("apps/web/.next/static/development/_buildManifest.js"), AnchoredSystemPathBuf("apps/web/.next/static/development/_ssgManifest.js"), AnchoredSystemPathBuf("apps/web/.next/server/app/page_client-reference-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/server/next-font-manifest.json"), AnchoredSystemPathBuf("apps/web/.next/static/chunks/app/layout.js"), AnchoredSystemPathBuf("apps/web/.next/static/chunks/webpack.js"), AnchoredSystemPathBuf("apps/web/.next/react-loadable-manifest.json"), AnchoredSystemPathBuf("apps/web/.next/server/middleware-build-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/server/app/auth/signup/page_client-reference-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/static/webpack/app/layout.c56b29cb85e8753a.hot-update.js"), AnchoredSystemPathBuf("apps/web/.next/static/webpack/webpack.c56b29cb85e8753a.hot-update.js"), AnchoredSystemPathBuf("apps/web/.next/app-build-manifest.json"), AnchoredSystemPathBuf("apps/web/.next/server/middleware-react-loadable-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/server/next-font-manifest.js"), AnchoredSystemPathBuf("apps/web/.next/static/webpack/c56b29cb85e8753a.webpack.hot-update.json")}
+2025-07-19T17:57:59.583911Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:00:05.191919Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/.next/trace")}
+2025-07-19T18:00:05.192693Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:02:58.288221Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:02:58.288245Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:03:01.688448Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:03:01.688456Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:03:05.788028Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:03:05.788036Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:03:09.788167Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignInForm.test.tsx")}
+2025-07-19T18:03:09.788176Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:04:55.287814Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/ResetPasswordForm.test.tsx")}
+2025-07-19T18:04:55.287826Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:04:57.488491Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/ResetPasswordForm.test.tsx")}
+2025-07-19T18:04:57.488501Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:08:15.989849Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/UpdatePasswordForm.test.tsx")}
+2025-07-19T18:08:15.989858Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:08:18.991991Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/UpdatePasswordForm.test.tsx")}
+2025-07-19T18:08:18.992000Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:08:19.091250Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/UpdatePasswordForm.test.tsx")}
+2025-07-19T18:08:19.091265Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:09:52.688872Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/ProtectedRoute.test.tsx")}
+2025-07-19T18:09:52.688883Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:09:54.788703Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/ProtectedRoute.test.tsx")}
+2025-07-19T18:09:54.788711Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:14:04.691218Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/AuthenticationFlow.test.tsx")}
+2025-07-19T18:14:04.691248Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:14:08.089323Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/AuthenticationFlow.test.tsx")}
+2025-07-19T18:14:08.089331Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:17:24.390591Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:17:24.390627Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:18:46.491163Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:18:46.491178Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:20:19.493282Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:20:19.493296Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:22:22.294219Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:22:22.294244Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:24:56.394736Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:24:56.394751Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:28:42.796134Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:28:42.796178Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:30:44.998430Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:30:44.998439Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:35:51.101302Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:35:51.101431Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:40:22.702441Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:40:22.702482Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:43:27.303553Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:43:27.303642Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:47:24.006498Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:47:24.006536Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:50:27.706705Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:50:27.706736Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:50:48.407462Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:50:48.407496Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:51:37.707042Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:51:37.707071Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:51:49.108359Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("jest.setup.js")}
+2025-07-19T18:51:49.108385Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-19T18:51:59.107788Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:51:59.107835Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:52:23.208800Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:52:23.208841Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:53:19.108587Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:53:19.108627Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:54:52.809446Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("babel.config.js")}
+2025-07-19T18:54:52.809476Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-19T18:54:54.909128Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("babel.config.js")}
+2025-07-19T18:54:54.909138Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-19T18:55:10.008961Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("jest.config.js")}
+2025-07-19T18:55:10.008988Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-19T18:55:17.608924Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:55:17.608932Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:55:30.409395Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:55:30.409432Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:56:11.410222Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("jest.config.js")}
+2025-07-19T18:56:11.410261Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-19T18:57:14.527425Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:57:14.527528Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T18:59:29.911238Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T18:59:29.911272Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:02:00.514000Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T19:02:00.514028Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:06:41.776632Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T19:06:41.776657Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:11:33.375386Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T19:11:33.375428Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:14:53.077157Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T19:14:53.077206Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:18:57.677461Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T19:18:57.678639Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:21:47.169593Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T19:21:47.169638Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:23:55.268801Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-19T19:23:55.268861Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:54:47.814610Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/.next/trace")}
+2025-07-19T19:54:47.815878Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-19T19:54:47.904815Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/.next/_events.json")}
+2025-07-19T19:54:47.904826Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))

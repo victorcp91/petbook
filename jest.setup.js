@@ -1,3 +1,4 @@
+import React from 'react';
 import '@testing-library/jest-dom';
 
 // Mock Next.js router (only if available)

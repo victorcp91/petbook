@@ -5,6 +5,9 @@ module.exports = {
     // Handle module aliases for the monorepo
     '^@/(.*)$': '<rootDir>/apps/web/src/$1',
     '^@petbook/(.*)$': '<rootDir>/packages/$1/src',
+    // Ensure React is resolved from the correct location
+    '^react$': '<rootDir>/apps/web/node_modules/react',
+    '^react-dom$': '<rootDir>/apps/web/node_modules/react-dom',
   },
   testPathIgnorePatterns: ['<rootDir>/.next/', '<rootDir>/node_modules/'],
   collectCoverageFrom: [
@@ -34,11 +37,21 @@ module.exports = {
     ],
   },
   transformIgnorePatterns: [
-    '/node_modules/',
+    '/node_modules/(?!(@supabase|isows|@supabase/realtime-js|@supabase/supabase-js)/)',
     '^.+\\.module\\.(css|sass|scss)$',
   ],
   moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json'],
   testEnvironmentOptions: {
     url: 'http://localhost',
   },
+  // Add this to ensure React is properly resolved
+  moduleDirectories: ['node_modules', '<rootDir>'],
+  // Ensure React is available globally
+  globals: {
+    'ts-jest': {
+      tsconfig: '<rootDir>/apps/web/tsconfig.json',
+    },
+  },
+  // Add module resolution to prioritize apps/web/node_modules
+  modulePaths: ['<rootDir>/apps/web/node_modules', '<rootDir>/node_modules'],
 };

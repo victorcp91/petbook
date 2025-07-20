@@ -101,10 +101,12 @@ describe('SignInForm', () => {
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       await act(async () => {
         await user.type(emailInput, 'invalid-email');
+        await user.type(passwordInput, 'password123');
         await user.click(submitButton);
       });
 
@@ -137,11 +139,13 @@ describe('SignInForm', () => {
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       // Test invalid email
       await act(async () => {
         await user.type(emailInput, 'invalid-email');
+        await user.type(passwordInput, 'password123');
         await user.click(submitButton);
       });
 

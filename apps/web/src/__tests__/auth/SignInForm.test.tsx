@@ -62,7 +62,7 @@ describe('SignInForm', () => {
         screen.getByRole('textbox', { name: /email/i })
       ).toBeInTheDocument();
       expect(
-        screen.getByRole('textbox', { name: /senha/i })
+        screen.getByPlaceholderText(/digite sua senha/i)
       ).toBeInTheDocument();
       expect(
         screen.getByRole('button', { name: /entrar/i })
@@ -111,7 +111,7 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
+        expect(screen.getByText(/Invalid email format/i)).toBeInTheDocument();
       });
     });
 
@@ -130,7 +130,7 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/senha é obrigatória/i)).toBeInTheDocument();
+        expect(screen.getByText(/Password is required/i)).toBeInTheDocument();
       });
     });
 
@@ -147,7 +147,7 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
+        expect(screen.getByText(/Invalid email format/i)).toBeInTheDocument();
       });
 
       // Test valid email
@@ -158,7 +158,9 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.queryByText(/email inválido/i)).not.toBeInTheDocument();
+        expect(
+          screen.queryByText(/Invalid email format/i)
+        ).not.toBeInTheDocument();
       });
     });
   });
@@ -389,11 +391,19 @@ describe('SignInForm', () => {
 
       await user.tab();
 
-      // The password visibility button gets focus before the submit button
+      // The password visibility button gets focus before the forgot password button
       const passwordToggleButton = screen.getByRole('button', {
         name: /mostrar senha/i,
       });
       expect(passwordToggleButton).toHaveFocus();
+
+      await user.tab();
+
+      // The forgot password button gets focus before the submit button
+      const forgotPasswordButton = screen.getByRole('button', {
+        name: /esqueceu sua senha/i,
+      });
+      expect(forgotPasswordButton).toHaveFocus();
 
       await user.tab();
 

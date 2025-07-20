@@ -25,22 +25,39 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Run linting
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Run type checking
-        run: npm run type-check
+        run: pnpm run type-check
 
       - name: Run unit tests
-        run: npm run test:unit
+        run: pnpm run test:unit
 
       - name: Run integration tests
-        run: npm run test:integration
+        run: pnpm run test:integration
 
       - name: Upload test coverage
         uses: codecov/codecov-action@v3
@@ -73,20 +90,37 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Setup Cypress cache
         uses: cypress-io/github-action@v6
         with:
-          install-command: npm ci
+          install-command: pnpm install --frozen-lockfile
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
       - name: Start development server
-        run: npm run dev &
+        run: pnpm run dev &
 
       - name: Run E2E tests
         uses: cypress-io/github-action@v6
@@ -126,20 +160,37 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Setup Cypress cache
         uses: cypress-io/github-action@v6
         with:
-          install-command: npm ci
+          install-command: pnpm install --frozen-lockfile
           wait-on: 'http://localhost:3000'
           wait-on-timeout: 120
 
       - name: Start development server
-        run: npm run dev &
+        run: pnpm run dev &
 
       - name: Run visual regression tests
         uses: cypress-io/github-action@v6
@@ -180,13 +231,30 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Start development server
-        run: npm run dev &
+        run: pnpm run dev &
 
       - name: Wait for server
         run: npx wait-on http://localhost:3000
@@ -201,13 +269,14 @@ jobs:
         if: always()
         with:
           name: performance-results
-          path: .lighthouseci/
+          path: |
+            .lighthouseci/
 
   # Security Tests
   security-tests:
     name: Security Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 10
 
     steps:
       - name: Checkout code
@@ -217,13 +286,30 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Run npm audit
-        run: npm audit --audit-level=moderate
+        run: pnpm audit --audit-level=moderate
 
       - name: Run Snyk security scan
         uses: snyk/actions/node@master
@@ -241,6 +327,54 @@ jobs:
             snyk-report.json
             npm-audit.json
 
+  # Build Verification
+  build-verification:
+    name: Build Verification
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build application
+        run: pnpm run build
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: build-artifacts
+          path: |
+            apps/web/.next/
+            packages/*/dist/
+
   # Test Summary
   test-summary:
     name: Test Summary
@@ -252,6 +386,7 @@ jobs:
         visual-regression,
         performance-tests,
         security-tests,
+        build-verification,
       ]
     if: always()
 
@@ -259,41 +394,35 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download test artifacts
+      - name: Download all artifacts
         uses: actions/download-artifact@v4
         with:
-          path: test-artifacts
+          path: artifacts
 
       - name: Generate test summary
         run: |
-          echo "## Test Results Summary" >> $GITHUB_STEP_SUMMARY
+          echo "## 🧪 Test Results Summary" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Unit & Integration Tests" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{ needs.unit-tests.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Coverage: Available in artifacts" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### E2E Tests" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{ needs.e2e-tests.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Videos: Available in artifacts" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Visual Regression Tests" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{ needs.visual-regression.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Screenshots: Available in artifacts" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Performance Tests" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{ needs.performance-tests.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Lighthouse: Available in artifacts" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "### Security Tests" >> $GITHUB_STEP_SUMMARY
           echo "- Status: ${{ needs.security-tests.result }}" >> $GITHUB_STEP_SUMMARY
-
-      - name: Comment on PR
-        if: github.event_name == 'pull_request'
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const fs = require('fs');
-            const summary = fs.readFileSync(process.env.GITHUB_STEP_SUMMARY, 'utf8');
-
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: summary
-            });
+          echo "- Audit: Available in artifacts" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### Build Verification" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ needs.build-verification.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Build: Available in artifacts" >> $GITHUB_STEP_SUMMARY

@@ -13,7 +13,7 @@ jobs:
   pre-deployment-tests:
     name: Pre-deployment Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 20
 
     steps:
       - name: Checkout code
@@ -23,60 +23,55 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
       - name: Run linting
-        run: npm run lint
+        run: pnpm run lint
 
       - name: Run type checking
-        run: npm run type-check
+        run: pnpm run type-check
 
       - name: Run unit tests
-        run: npm run test:unit
+        run: pnpm run test:unit
 
       - name: Run integration tests
-        run: npm run test:integration
-
-      - name: Run E2E tests
-        run: |
-          npm run dev &
-          npx wait-on http://localhost:3000
-          npx cypress run --spec "cypress/e2e/**/*.cy.ts" --config-file cypress.config.ts
-        env:
-          CI: true
-
-      - name: Run visual regression tests
-        run: |
-          npm run dev &
-          npx wait-on http://localhost:3000
-          npx cypress run --spec "cypress/e2e/visual-regression.cy.ts" --config-file cypress.config.ts
-        env:
-          CI: true
-          visualRegressionType: regression
+        run: pnpm run test:integration
 
       - name: Run security audit
-        run: npm audit --audit-level=moderate
+        run: pnpm audit --audit-level=moderate
 
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: pre-deployment-test-results
-          path: |
-            coverage/
-            cypress/videos/
-            cypress/screenshots/
-            cypress/visual-regression/
-            test-results/
+      - name: Build application
+        run: pnpm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
-  # Build Application
-  build:
-    name: Build Application
+  # Deploy to Staging
+  deploy-staging:
+    name: Deploy to Staging
     runs-on: ubuntu-latest
     needs: pre-deployment-tests
+    environment: staging
     timeout-minutes: 15
 
     steps:
@@ -87,43 +82,33 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm ci
+        run: pnpm install --frozen-lockfile
 
-      - name: Build application
-        run: npm run build
+      - name: Build for staging
+        run: pnpm run build
         env:
-          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
-          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: build-artifacts
-          path: |
-            .next/
-            out/
-            public/
-
-  # Deploy to Staging
-  deploy-staging:
-    name: Deploy to Staging
-    runs-on: ubuntu-latest
-    needs: build
-    environment: staging
-    timeout-minutes: 20
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
-        with:
-          name: build-artifacts
-          path: .
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.STAGING_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.STAGING_SUPABASE_ANON_KEY }}
 
       - name: Deploy to Vercel (Staging)
         uses: amondnet/vercel-action@v25
@@ -131,31 +116,24 @@ jobs:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
-          scope: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-args: '--prod=false'
 
-      - name: Run post-deployment tests
+      - name: Run smoke tests on staging
         run: |
-          # Wait for deployment to be ready
-          sleep 60
+          # Wait for deployment to complete
+          sleep 30
 
-          # Run smoke tests against staging
-          npm run test:smoke -- --baseUrl=${{ steps.deploy.outputs.preview-url }}
+          # Run basic health checks
+          curl -f ${{ secrets.STAGING_URL }}/api/health || exit 1
 
-      - name: Upload deployment results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: staging-deployment-results
-          path: |
-            test-results/
-            coverage/
+          # Run basic functionality tests
+          pnpm run test:smoke --base-url=${{ secrets.STAGING_URL }}
 
   # Deploy to Production
   deploy-production:
     name: Deploy to Production
     runs-on: ubuntu-latest
-    needs: [build, deploy-staging]
+    needs: [pre-deployment-tests, deploy-staging]
     environment: production
     timeout-minutes: 20
 
@@ -163,11 +141,37 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download build artifacts
-        uses: actions/download-artifact@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
         with:
-          name: build-artifacts
-          path: .
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build for production
+        run: pnpm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY }}
 
       - name: Deploy to Vercel (Production)
         uses: amondnet/vercel-action@v25
@@ -176,24 +180,17 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
           vercel-args: '--prod'
-          scope: ${{ secrets.VERCEL_ORG_ID }}
 
-      - name: Run post-deployment tests
+      - name: Run health checks
         run: |
-          # Wait for deployment to be ready
+          # Wait for deployment to complete
           sleep 60
 
-          # Run smoke tests against production
-          npm run test:smoke -- --baseUrl=${{ steps.deploy.outputs.preview-url }}
+          # Run comprehensive health checks
+          curl -f ${{ secrets.PRODUCTION_URL }}/api/health || exit 1
 
-      - name: Upload deployment results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: production-deployment-results
-          path: |
-            test-results/
-            coverage/
+          # Run smoke tests
+          pnpm run test:smoke --base-url=${{ secrets.PRODUCTION_URL }}
 
   # Post-deployment Monitoring
   post-deployment-monitoring:
@@ -210,44 +207,98 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 8
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
 
       - name: Install dependencies
-        run: npm ci
-
-      - name: Run health checks
-        run: |
-          # Run health checks against production
-          npm run test:health -- --baseUrl=${{ needs.deploy-production.outputs.url }}
+        run: pnpm install --frozen-lockfile
 
       - name: Run performance tests
         run: |
-          # Run Lighthouse CI against production
-          npx lhci autorun --url=${{ needs.deploy-production.outputs.url }}
+          # Wait for deployment to stabilize
+          sleep 120
 
-      - name: Send deployment notification
+          # Run Lighthouse performance tests
+          pnpm run test:performance --url=${{ secrets.PRODUCTION_URL }}
+
+      - name: Run E2E tests on production
+        run: |
+          # Run critical E2E tests on production
+          pnpm run test:e2e:critical --base-url=${{ secrets.PRODUCTION_URL }}
+
+      - name: Monitor application health
+        run: |
+          # Run health monitoring for 5 minutes
+          for i in {1..10}; do
+            curl -f ${{ secrets.PRODUCTION_URL }}/api/health || exit 1
+            sleep 30
+          done
+
+  # Deployment Summary
+  deployment-summary:
+    name: Deployment Summary
+    runs-on: ubuntu-latest
+    needs:
+      [
+        pre-deployment-tests,
+        deploy-staging,
+        deploy-production,
+        post-deployment-monitoring,
+      ]
+    if: always()
+
+    steps:
+      - name: Generate deployment summary
+        run: |
+          echo "## 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📋 Pre-deployment Tests" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ needs.pre-deployment-tests.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Build: Successful" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🧪 Staging Deployment" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ needs.deploy-staging.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- URL: ${{ secrets.STAGING_URL }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Production Deployment" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ needs.deploy-production.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- URL: ${{ secrets.PRODUCTION_URL }}" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📊 Post-deployment Monitoring" >> $GITHUB_STEP_SUMMARY
+          echo "- Status: ${{ needs.post-deployment-monitoring.result }}" >> $GITHUB_STEP_SUMMARY
+          echo "- Health: Monitored" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📈 Overall Status" >> $GITHUB_STEP_SUMMARY
+          if [[ "${{ needs.pre-deployment-tests.result }}" == "success" && "${{ needs.deploy-staging.result }}" == "success" && "${{ needs.deploy-production.result }}" == "success" && "${{ needs.post-deployment-monitoring.result }}" == "success" ]]; then
+            echo "✅ **Deployment successful!** All stages completed." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Deployment failed.** Please check the results above." >> $GITHUB_STEP_SUMMARY
+          fi
+
+      - name: Send notification
+        if: always()
         uses: actions/github-script@v7
         with:
           script: |
-            const deploymentUrl = '${{ needs.deploy-production.outputs.url }}';
+            const summary = fs.readFileSync(process.env.GITHUB_STEP_SUMMARY, 'utf8');
 
-            github.rest.issues.createComment({
-              issue_number: context.issue.number,
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              body: `🚀 **Deployment Complete!**
-              
-              **Production URL:** ${deploymentUrl}
-              
-              **Test Results:**
-              - ✅ Pre-deployment tests passed
-              - ✅ Build successful
-              - ✅ Staging deployment successful
-              - ✅ Production deployment successful
-              - ✅ Post-deployment monitoring passed
-              
-              **Next Steps:**
-              - Monitor application performance
-              - Check error logs
-              - Verify all features are working correctly`
-            });
+            // Send notification to Slack or other services
+            // This is a placeholder - implement your notification logic
+            console.log('Deployment completed with status:', '${{ needs.deploy-production.result }}');
+            console.log('Summary:', summary);

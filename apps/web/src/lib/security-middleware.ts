@@ -31,7 +31,6 @@ export function securityMiddleware(req: NextRequest): NextResponse | null {
   const clientIP =
     req.headers.get('x-forwarded-for') ||
     req.headers.get('x-real-ip') ||
-    req.ip ||
     'unknown';
 
   // Check rate limiting for auth endpoints
@@ -110,7 +109,6 @@ export function enhancedSecurityMiddleware(
   const clientIP =
     req.headers.get('x-forwarded-for') ||
     req.headers.get('x-real-ip') ||
-    req.ip ||
     'unknown';
 
   // Additional security checks
@@ -254,7 +252,6 @@ export function authSecurityMiddleware(req: NextRequest): NextResponse | null {
   const clientIP =
     req.headers.get('x-forwarded-for') ||
     req.headers.get('x-real-ip') ||
-    req.ip ||
     'unknown';
 
   const path = req.nextUrl.pathname;
@@ -315,7 +312,6 @@ export function adminSecurityMiddleware(req: NextRequest): NextResponse | null {
   const clientIP =
     req.headers.get('x-forwarded-for') ||
     req.headers.get('x-real-ip') ||
-    req.ip ||
     'unknown';
 
   const path = req.nextUrl.pathname;

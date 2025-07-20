@@ -63,9 +63,12 @@ describe('UpdatePasswordForm', () => {
     it('shows password visibility toggles', () => {
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const toggleButtons = screen.getAllByRole('button', {
         name: /toggle password visibility/i,
       });
@@ -104,7 +107,9 @@ describe('UpdatePasswordForm', () => {
       const user = userEvent.setup();
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
       await user.type(passwordInput, 'weak');
 
       const submitButton = screen.getByRole('button', {
@@ -123,9 +128,12 @@ describe('UpdatePasswordForm', () => {
       const user = userEvent.setup();
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
 
       await user.type(passwordInput, 'Password123!');
       await user.type(confirmPasswordInput, 'DifferentPassword123!');
@@ -144,7 +152,9 @@ describe('UpdatePasswordForm', () => {
       const user = userEvent.setup();
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
 
       // Test weak password (too short)
       await user.type(passwordInput, 'weak');
@@ -251,9 +261,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -278,9 +291,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -308,9 +324,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -341,9 +360,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -366,9 +388,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -391,9 +416,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -413,9 +441,12 @@ describe('UpdatePasswordForm', () => {
       const user = userEvent.setup();
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const toggleButtons = screen.getAllByRole('button', {
         name: /toggle password visibility/i,
       });
@@ -451,9 +482,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -496,9 +530,12 @@ describe('UpdatePasswordForm', () => {
       const user = userEvent.setup();
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -527,9 +564,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -563,9 +603,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });
@@ -591,9 +634,12 @@ describe('UpdatePasswordForm', () => {
 
       render(<UpdatePasswordForm />);
 
-      const passwordInput = screen.getByLabelText(/nova senha/i);
-      const confirmPasswordInput =
-        screen.getByLabelText(/confirmar nova senha/i);
+      const passwordInput = screen.getByRole('textbox', {
+        name: /nova senha/i,
+      });
+      const confirmPasswordInput = screen.getByRole('textbox', {
+        name: /confirmar nova senha/i,
+      });
       const submitButton = screen.getByRole('button', {
         name: /atualizar senha/i,
       });

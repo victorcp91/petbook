@@ -191,7 +191,7 @@ describe('Navigation', () => {
     expect(dashboardItem).toBeInTheDocument();
 
     // The icon should be present (lucide-react icons are rendered as SVGs)
-    const dashboardLink = dashboardItem.closest('a');
+    const dashboardLink = screen.getByRole('link', { name: /dashboard/i });
     expect(dashboardLink).toHaveClass('inline-flex', 'items-center');
   });
 

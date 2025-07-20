@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { Badge } from '@/components/ui/badge';
+import userEvent from '@testing-library/user-event';
 
 describe('Badge', () => {
   it('should render with default props', () => {
@@ -71,12 +72,13 @@ describe('Badge', () => {
     expect(screen.getByText('Second Badge')).toBeInTheDocument();
   });
 
-  it('should handle click events', () => {
+  it('should handle click events', async () => {
+    const user = userEvent.setup();
     const handleClick = jest.fn();
     render(<Badge onClick={handleClick}>Clickable Badge</Badge>);
 
-    const badge = screen.getByText('Clickable Badge').parentElement;
-    badge?.click();
+    const badge = screen.getByText('Clickable Badge');
+    await user.click(badge);
 
     expect(handleClick).toHaveBeenCalledTimes(1);
   });

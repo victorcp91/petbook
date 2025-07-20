@@ -104,12 +104,14 @@ describe('SignInForm', () => {
       const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
+      // Type invalid email and password, then submit immediately
       await act(async () => {
         await user.type(emailInput, 'invalid-email');
         await user.type(passwordInput, 'password123');
         await user.click(submitButton);
       });
 
+      // Wait for validation error to appear
       await waitFor(() => {
         expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
       });
@@ -162,6 +164,21 @@ describe('SignInForm', () => {
 
       await waitFor(() => {
         expect(screen.queryByText(/email inválido/i)).not.toBeInTheDocument();
+      });
+    });
+
+    it('debug: test validation is working', async () => {
+      const user = userEvent.setup();
+      render(<SignInForm />);
+
+      const submitButton = screen.getByRole('button', { name: /entrar/i });
+
+      await act(async () => {
+        await user.click(submitButton);
+      });
+
+      await waitFor(() => {
+        expect(screen.getByText(/email é obrigatório/i)).toBeInTheDocument();
       });
     });
   });

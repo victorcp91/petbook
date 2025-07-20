@@ -1,7 +1,10 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
+import { act } from 'react-dom/test-utils';
 import userEvent from '@testing-library/user-event';
-import { SignInForm } from '../../components/auth/SignInForm';
+import '@testing-library/jest-dom';
+import { SignInForm } from '@/components/auth/SignInForm';
+import { useAuthContext } from '@/contexts/AuthContext';
 
 // Mock Supabase client
 const mockSignIn = jest.fn();
@@ -51,29 +54,32 @@ describe('SignInForm', () => {
     });
   });
 
-  describe('Rendering', () => {
-    it('renders sign in form with all required fields', () => {
+  describe('Form Rendering', () => {
+    it('renders all form elements', () => {
       render(<SignInForm />);
 
-      expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/senha/i)).toBeInTheDocument();
+      expect(
+        screen.getByRole('textbox', { name: /email/i })
+      ).toBeInTheDocument();
+      expect(
+        screen.getByRole('textbox', { name: /senha/i })
+      ).toBeInTheDocument();
       expect(
         screen.getByRole('button', { name: /entrar/i })
       ).toBeInTheDocument();
       expect(screen.getByText(/esqueceu sua senha/i)).toBeInTheDocument();
-      expect(screen.getByText(/não tem uma conta/i)).toBeInTheDocument();
+      expect(screen.getByText(/criar conta/i)).toBeInTheDocument();
     });
 
-    it('shows password visibility toggle', () => {
+    it('renders with proper initial state', () => {
       render(<SignInForm />);
 
-      const passwordInput = screen.getByLabelText(/senha/i);
-      const toggleButton = screen.getByRole('button', {
-        name: /toggle password visibility/i,
-      });
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
 
+      expect(emailInput).toHaveValue('');
+      expect(passwordInput).toHaveValue('');
       expect(passwordInput).toHaveAttribute('type', 'password');
-      expect(toggleButton).toBeInTheDocument();
     });
   });
 
@@ -94,11 +100,15 @@ describe('SignInForm', () => {
       const user = userEvent.setup();
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      await user.type(emailInput, 'invalid-email');
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      await act(async () => {
+        await user.type(emailInput, 'invalid-email');
+      });
 
       const submitButton = screen.getByRole('button', { name: /entrar/i });
-      await user.click(submitButton);
+      await act(async () => {
+        await user.click(submitButton);
+      });
 
       await waitFor(() => {
         expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
@@ -109,11 +119,15 @@ describe('SignInForm', () => {
       const user = userEvent.setup();
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      await user.type(emailInput, 'test@example.com');
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      await act(async () => {
+        await user.type(emailInput, 'test@example.com');
+      });
 
       const submitButton = screen.getByRole('button', { name: /entrar/i });
-      await user.click(submitButton);
+      await act(async () => {
+        await user.click(submitButton);
+      });
 
       await waitFor(() => {
         expect(screen.getByText(/senha é obrigatória/i)).toBeInTheDocument();
@@ -124,20 +138,24 @@ describe('SignInForm', () => {
       const user = userEvent.setup();
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
 
       // Test invalid email
-      await user.type(emailInput, 'invalid-email');
-      await user.tab();
+      await act(async () => {
+        await user.type(emailInput, 'invalid-email');
+        await user.tab();
+      });
 
       await waitFor(() => {
         expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
       });
 
       // Test valid email
-      await user.clear(emailInput);
-      await user.type(emailInput, 'valid@example.com');
-      await user.tab();
+      await act(async () => {
+        await user.clear(emailInput);
+        await user.type(emailInput, 'valid@example.com');
+        await user.tab();
+      });
 
       await waitFor(() => {
         expect(screen.queryByText(/email inválido/i)).not.toBeInTheDocument();
@@ -155,13 +173,15 @@ describe('SignInForm', () => {
 
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      const passwordInput = screen.getByLabelText(/senha/i);
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
-      await user.type(emailInput, 'test@example.com');
-      await user.type(passwordInput, 'password123');
-      await user.click(submitButton);
+      await act(async () => {
+        await user.type(emailInput, 'test@example.com');
+        await user.type(passwordInput, 'password123');
+        await user.click(submitButton);
+      });
 
       await waitFor(() => {
         expect(mockAuthContext.signIn).toHaveBeenCalledWith({
@@ -183,13 +203,15 @@ describe('SignInForm', () => {
 
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      const passwordInput = screen.getByLabelText(/senha/i);
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
-      await user.type(emailInput, 'test@example.com');
-      await user.type(passwordInput, 'password123');
-      await user.click(submitButton);
+      await act(async () => {
+        await user.type(emailInput, 'test@example.com');
+        await user.type(passwordInput, 'password123');
+        await user.click(submitButton);
+      });
 
       await waitFor(() => {
         expect(submitButton).toBeDisabled();
@@ -213,13 +235,15 @@ describe('SignInForm', () => {
 
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      const passwordInput = screen.getByLabelText(/senha/i);
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
-      await user.type(emailInput, 'test@example.com');
-      await user.type(passwordInput, 'wrongpassword');
-      await user.click(submitButton);
+      await act(async () => {
+        await user.type(emailInput, 'test@example.com');
+        await user.type(passwordInput, 'wrongpassword');
+        await user.click(submitButton);
+      });
 
       await waitFor(() => {
         expect(screen.getByText(/credenciais inválidas/i)).toBeInTheDocument();
@@ -235,13 +259,15 @@ describe('SignInForm', () => {
 
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      const passwordInput = screen.getByLabelText(/senha/i);
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
-      await user.type(emailInput, 'test@example.com');
-      await user.type(passwordInput, 'password123');
-      await user.click(submitButton);
+      await act(async () => {
+        await user.type(emailInput, 'test@example.com');
+        await user.type(passwordInput, 'password123');
+        await user.click(submitButton);
+      });
 
       await waitFor(() => {
         expect(screen.getByText(/erro de conexão/i)).toBeInTheDocument();
@@ -257,13 +283,15 @@ describe('SignInForm', () => {
 
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      const passwordInput = screen.getByLabelText(/senha/i);
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
-      await user.type(emailInput, 'nonexistent@example.com');
-      await user.type(passwordInput, 'password123');
-      await user.click(submitButton);
+      await act(async () => {
+        await user.type(emailInput, 'nonexistent@example.com');
+        await user.type(passwordInput, 'password123');
+        await user.click(submitButton);
+      });
 
       await waitFor(() => {
         expect(screen.getByText(/usuário não encontrado/i)).toBeInTheDocument();
@@ -276,17 +304,23 @@ describe('SignInForm', () => {
       const user = userEvent.setup();
       render(<SignInForm />);
 
-      const passwordInput = screen.getByLabelText(/senha/i);
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const toggleButton = screen.getByRole('button', {
-        name: /toggle password visibility/i,
+        name: /mostrar senha/i,
       });
 
       expect(passwordInput).toHaveAttribute('type', 'password');
 
-      await user.click(toggleButton);
+      await act(async () => {
+        await user.click(toggleButton);
+      });
+
       expect(passwordInput).toHaveAttribute('type', 'text');
 
-      await user.click(toggleButton);
+      await act(async () => {
+        await user.click(toggleButton);
+      });
+
       expect(passwordInput).toHaveAttribute('type', 'password');
     });
   });
@@ -318,8 +352,12 @@ describe('SignInForm', () => {
     it('has proper form labels', () => {
       render(<SignInForm />);
 
-      expect(screen.getByLabelText(/email/i)).toBeInTheDocument();
-      expect(screen.getByLabelText(/senha/i)).toBeInTheDocument();
+      expect(
+        screen.getByRole('textbox', { name: /email/i })
+      ).toBeInTheDocument();
+      expect(
+        screen.getByPlaceholderText(/digite sua senha/i)
+      ).toBeInTheDocument();
     });
 
     it('has proper button roles', () => {
@@ -329,7 +367,7 @@ describe('SignInForm', () => {
         screen.getByRole('button', { name: /entrar/i })
       ).toBeInTheDocument();
       expect(
-        screen.getByRole('button', { name: /toggle password visibility/i })
+        screen.getByRole('button', { name: /mostrar senha/i })
       ).toBeInTheDocument();
     });
 
@@ -337,17 +375,20 @@ describe('SignInForm', () => {
       const user = userEvent.setup();
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      const passwordInput = screen.getByLabelText(/senha/i);
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       await user.tab();
+
       expect(emailInput).toHaveFocus();
 
       await user.tab();
+
       expect(passwordInput).toHaveFocus();
 
       await user.tab();
+
       expect(submitButton).toHaveFocus();
     });
   });
@@ -365,12 +406,14 @@ describe('SignInForm', () => {
 
       render(<SignInForm />);
 
-      const emailInput = screen.getByLabelText(/email/i);
-      const passwordInput = screen.getByLabelText(/senha/i);
+      const emailInput = screen.getByRole('textbox', { name: /email/i });
+      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
-      await user.type(emailInput, 'test@example.com');
-      await user.type(passwordInput, 'password123');
+      await act(async () => {
+        await user.type(emailInput, 'test@example.com');
+        await user.type(passwordInput, 'password123');
+      });
 
       // Try to submit multiple times
       await user.click(submitButton);

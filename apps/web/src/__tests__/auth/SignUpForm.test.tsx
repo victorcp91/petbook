@@ -388,4 +388,72 @@ describe('SignUpForm', () => {
     // Verify that the form submission was prevented (signUp should not be called)
     expect(mockSignUp).not.toHaveBeenCalled();
   });
+
+  it('submits form with valid data', async () => {
+    const user = userEvent.setup();
+    mockSignUp.mockResolvedValue({
+      data: { user: { id: '123', email: 'john@example.com' } },
+      error: null,
+    });
+
+    render(<SignUpForm onSuccess={mockOnSuccess} onError={mockOnError} />);
+
+    const submitButton = screen.getByRole('button', { name: /criar conta/i });
+
+    await act(async () => {
+      await user.click(submitButton);
+    });
+
+    await waitFor(() => {
+      expect(mockSignUp).toHaveBeenCalledWith({
+        email: 'john@example.com',
+        password: 'Password123!',
+        options: {
+          data: {
+            full_name: 'John Doe',
+            cpf: '12345678901',
+            phone: '11987654321',
+            company_name: 'Test Company',
+            role: 'owner',
+          },
+        },
+      });
+    });
+  });
+
+  it('handles successful registration', async () => {
+    const user = userEvent.setup();
+    mockSignUp.mockResolvedValue({
+      data: { user: { id: '123', email: 'john@example.com' } },
+      error: null,
+    });
+
+    render(<SignUpForm onSuccess={mockOnSuccess} onError={mockOnError} />);
+
+    await act(async () => {
+      await user.type(screen.getByLabelText('Nome Completo *'), 'John Doe');
+      await user.type(screen.getByLabelText('Email *'), 'john@example.com');
+      await user.type(screen.getByLabelText('Senha *'), 'Password123!');
+      await user.type(
+        screen.getByLabelText('Confirmar Senha *'),
+        'Password123!'
+      );
+      await user.type(screen.getByLabelText('CPF *'), '12345678901');
+      await user.type(screen.getByLabelText('Telefone *'), '11987654321');
+      await user.type(
+        screen.getByLabelText('Nome da Empresa *'),
+        'Test Company'
+      );
+    });
+
+    const submitButton = screen.getByRole('button', { name: /criar conta/i });
+
+    await act(async () => {
+      await user.click(submitButton);
+    });
+
+    await waitFor(() => {
+      expect(mockOnSuccess).toHaveBeenCalled();
+    });
+  });
 });

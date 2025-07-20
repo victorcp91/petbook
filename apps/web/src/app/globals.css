@@ -24,6 +24,27 @@
     --input: 214.3 31.8% 91.4%;
     --ring: 221.2 83.2% 53.3%;
     --radius: 0.5rem;
+
+    /* PetBook Brand Colors (from styleguide.json) */
+    --petbook-primary: 174 100% 27%; /* #00897B */
+    --petbook-primary-dark: 174 100% 21%; /* #00695C */
+    --petbook-primary-light: 174 100% 38%; /* #4DB6AC */
+    --petbook-text-primary: 220 13% 18%; /* #111827 */
+    --petbook-text-secondary: 220 9% 46%; /* #4B5563 */
+    --petbook-text-muted: 220 9% 46%; /* #6B7280 */
+    --petbook-background-primary: 220 14% 98%; /* #FAFBFC */
+    --petbook-background-secondary: 0 0% 100%; /* #FFFFFF */
+    --petbook-border: 220 13% 91%; /* #E5E7EB */
+
+    /* Status Colors */
+    --status-queued: 43 96% 56%; /* #F59E0B */
+    --status-queued-foreground: 43 96% 32%; /* #92400E */
+    --status-in-progress: 174 100% 27%; /* #00897B (PetBook brand) */
+    --status-in-progress-foreground: 0 0% 100%; /* #FFFFFF */
+    --status-completed: 160 84% 39%; /* #10B981 */
+    --status-completed-foreground: 160 84% 24%; /* #064E3B */
+    --status-cancelled: 0 84% 60%; /* #EF4444 */
+    --status-cancelled-foreground: 0 84% 39%; /* #7F1D1D */
   }
 
   .dark {
@@ -33,7 +54,7 @@
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 217.2 91.2% 59.8%;
+    --primary: 210 40% 98%;
     --primary-foreground: 222.2 84% 4.9%;
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
@@ -45,7 +66,18 @@
     --destructive-foreground: 210 40% 98%;
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
-    --ring: 224.3 76.3% 94.1%;
+    --ring: 212.7 26.8% 83.9%;
+
+    /* PetBook Dark Mode Colors */
+    --petbook-primary: 174 100% 38%; /* Lighter for dark mode */
+    --petbook-primary-dark: 174 100% 27%; /* Original for dark mode */
+    --petbook-primary-light: 174 100% 50%; /* Even lighter for dark mode */
+    --petbook-text-primary: 0 0% 100%; /* White text */
+    --petbook-text-secondary: 220 9% 80%; /* Light gray */
+    --petbook-text-muted: 220 9% 65%; /* Medium gray */
+    --petbook-background-primary: 222.2 84% 4.9%; /* Dark background */
+    --petbook-background-secondary: 217.2 32.6% 17.5%; /* Dark card */
+    --petbook-border: 217.2 32.6% 17.5%; /* Dark border */
   }
 }
 
@@ -56,4 +88,35 @@
   body {
     @apply bg-background text-foreground;
   }
-} 
+}
+
+/* PetBook Custom Components */
+@layer components {
+  .petbook-card {
+    @apply bg-petbook-background-secondary border border-petbook-border rounded-lg shadow-sm;
+  }
+
+  .petbook-button-primary {
+    @apply bg-petbook-primary text-white hover:bg-petbook-primary-dark focus:ring-2 focus:ring-petbook-primary focus:ring-offset-2;
+  }
+
+  .petbook-button-secondary {
+    @apply bg-petbook-background-secondary text-petbook-text-primary border border-petbook-border hover:bg-petbook-background-primary;
+  }
+
+  .petbook-status-queued {
+    @apply bg-status-queued text-status-queued-foreground;
+  }
+
+  .petbook-status-in-progress {
+    @apply bg-status-inProgress text-status-inProgress-foreground;
+  }
+
+  .petbook-status-completed {
+    @apply bg-status-completed text-status-completed-foreground;
+  }
+
+  .petbook-status-cancelled {
+    @apply bg-status-cancelled text-status-cancelled-foreground;
+  }
+}

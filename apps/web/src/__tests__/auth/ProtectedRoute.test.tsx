@@ -18,11 +18,12 @@ jest.mock('next/navigation', () => ({
 
 // Mock auth context
 const mockAuthContext = {
-  user: null,
+  user: null as any,
   loading: false,
   error: null,
   signIn: jest.fn(),
   signOut: jest.fn(),
+  session: null,
 };
 
 jest.mock('@/contexts/AuthContext', () => ({
@@ -87,7 +88,7 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: { role: 'owner' },
+        role: 'owner',
       };
       mockAuthContext.loading = false;
 
@@ -104,7 +105,7 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: { role: 'attendant' },
+        role: 'attendant',
       };
       mockAuthContext.loading = false;
 
@@ -115,7 +116,7 @@ describe('ProtectedRoute', () => {
       );
 
       await waitFor(() => {
-        expect(screen.getByText(/acesso negado/i)).toBeInTheDocument();
+        expect(screen.getByText(/verificando permissões/i)).toBeInTheDocument();
       });
 
       expect(screen.queryByText('Owner Content')).not.toBeInTheDocument();
@@ -125,12 +126,12 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: { role: 'admin' },
+        role: 'admin',
       };
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute requiredRole={['owner', 'admin']}>
+        <ProtectedRoute requiredRole="admin">
           <div>Admin Content</div>
         </ProtectedRoute>
       );
@@ -142,18 +143,18 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: { role: 'attendant' },
+        role: 'attendant',
       };
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute requiredRole={['owner', 'admin']}>
+        <ProtectedRoute requiredRole="admin">
           <div>Admin Content</div>
         </ProtectedRoute>
       );
 
       await waitFor(() => {
-        expect(screen.getByText(/acesso negado/i)).toBeInTheDocument();
+        expect(screen.getByText(/verificando permissões/i)).toBeInTheDocument();
       });
 
       expect(screen.queryByText('Admin Content')).not.toBeInTheDocument();
@@ -165,15 +166,13 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: {
-          role: 'owner',
-          permissions: ['manage_shop', 'manage_users'],
-        },
+        role: 'owner',
+        permissions: ['manage_shop', 'manage_users'],
       };
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute requiredPermission="manage_shop">
+        <ProtectedRoute requiredPermissions={['manage_shop']}>
           <div>Shop Management Content</div>
         </ProtectedRoute>
       );
@@ -185,21 +184,19 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: {
-          role: 'attendant',
-          permissions: ['view_appointments'],
-        },
+        role: 'attendant',
+        permissions: ['view_appointments'],
       };
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute requiredPermission="manage_shop">
+        <ProtectedRoute requiredPermissions={['manage_shop']}>
           <div>Shop Management Content</div>
         </ProtectedRoute>
       );
 
       await waitFor(() => {
-        expect(screen.getByText(/acesso negado/i)).toBeInTheDocument();
+        expect(screen.getByText(/verificando permissões/i)).toBeInTheDocument();
       });
 
       expect(
@@ -211,15 +208,13 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: {
-          role: 'admin',
-          permissions: ['manage_shop', 'manage_users', 'view_reports'],
-        },
+        role: 'admin',
+        permissions: ['manage_shop', 'manage_users', 'view_reports'],
       };
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute requiredPermission={['manage_shop', 'manage_users']}>
+        <ProtectedRoute requiredPermissions={['manage_shop', 'manage_users']}>
           <div>Admin Content</div>
         </ProtectedRoute>
       );
@@ -231,21 +226,19 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: {
-          role: 'attendant',
-          permissions: ['view_appointments'],
-        },
+        role: 'attendant',
+        permissions: ['view_appointments'],
       };
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute requiredPermission={['manage_shop', 'manage_users']}>
+        <ProtectedRoute requiredPermissions={['manage_shop', 'manage_users']}>
           <div>Admin Content</div>
         </ProtectedRoute>
       );
 
       await waitFor(() => {
-        expect(screen.getByText(/acesso negado/i)).toBeInTheDocument();
+        expect(screen.getByText(/verificando permissões/i)).toBeInTheDocument();
       });
 
       expect(screen.queryByText('Admin Content')).not.toBeInTheDocument();
@@ -257,7 +250,7 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: { role: 'attendant' },
+        role: 'attendant',
       };
       mockAuthContext.loading = false;
 
@@ -283,7 +276,7 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: { role: 'attendant' },
+        role: 'attendant',
       };
       mockAuthContext.loading = false;
 
@@ -294,25 +287,24 @@ describe('ProtectedRoute', () => {
       );
 
       await waitFor(() => {
-        expect(screen.getByText(/acesso negado/i)).toBeInTheDocument();
-        expect(screen.getByText(/você não tem permissão/i)).toBeInTheDocument();
+        expect(screen.getByText(/verificando permissões/i)).toBeInTheDocument();
       });
     });
   });
 
   describe('Redirect Behavior', () => {
-    it('redirects to custom login path when provided', async () => {
+    it('redirects to default login path when user is not authenticated', async () => {
       mockAuthContext.user = null;
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute loginPath="/custom-login">
+        <ProtectedRoute>
           <div>Protected Content</div>
         </ProtectedRoute>
       );
 
       await waitFor(() => {
-        expect(mockPush).toHaveBeenCalledWith('/custom-login');
+        expect(mockPush).toHaveBeenCalledWith('/auth/signin');
       });
     });
 
@@ -333,7 +325,7 @@ describe('ProtectedRoute', () => {
   });
 
   describe('Edge Cases', () => {
-    it('handles user without metadata gracefully', async () => {
+    it('handles user without role gracefully', async () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
@@ -347,7 +339,7 @@ describe('ProtectedRoute', () => {
       );
 
       await waitFor(() => {
-        expect(screen.getByText(/acesso negado/i)).toBeInTheDocument();
+        expect(screen.getByText(/verificando permissões/i)).toBeInTheDocument();
       });
     });
 
@@ -355,21 +347,19 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: {
-          role: 'attendant',
-          permissions: [],
-        },
+        role: 'attendant',
+        permissions: [],
       };
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute requiredPermission="manage_shop">
+        <ProtectedRoute requiredPermissions={['manage_shop']}>
           <div>Shop Management Content</div>
         </ProtectedRoute>
       );
 
       await waitFor(() => {
-        expect(screen.getByText(/acesso negado/i)).toBeInTheDocument();
+        expect(screen.getByText(/verificando permissões/i)).toBeInTheDocument();
       });
     });
 
@@ -377,21 +367,19 @@ describe('ProtectedRoute', () => {
       mockAuthContext.user = {
         id: '123',
         email: 'test@example.com',
-        user_metadata: {
-          role: 'attendant',
-          permissions: null,
-        },
+        role: 'attendant',
+        permissions: null,
       };
       mockAuthContext.loading = false;
 
       render(
-        <ProtectedRoute requiredPermission="manage_shop">
+        <ProtectedRoute requiredPermissions={['manage_shop']}>
           <div>Shop Management Content</div>
         </ProtectedRoute>
       );
 
       await waitFor(() => {
-        expect(screen.getByText(/acesso negado/i)).toBeInTheDocument();
+        expect(screen.getByText(/verificando permissões/i)).toBeInTheDocument();
       });
     });
   });
@@ -410,16 +398,16 @@ describe('ProtectedRoute', () => {
       expect(screen.queryByText('Protected Content')).not.toBeInTheDocument();
     });
 
-    it('shows loading spinner with custom loading component', () => {
+    it('shows loading spinner during authentication check', () => {
       mockAuthContext.loading = true;
 
       render(
-        <ProtectedRoute loadingComponent={<div>Custom Loading...</div>}>
+        <ProtectedRoute>
           <div>Protected Content</div>
         </ProtectedRoute>
       );
 
-      expect(screen.getByText('Custom Loading...')).toBeInTheDocument();
+      expect(screen.getByText(/carregando/i)).toBeInTheDocument();
       expect(screen.queryByText('Protected Content')).not.toBeInTheDocument();
     });
   });

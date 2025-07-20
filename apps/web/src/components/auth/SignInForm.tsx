@@ -45,6 +45,7 @@ export function SignInForm({
     Record<string, string>
   >({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string>('');
 
   // Form validation
   const validateForm = (): boolean => {
@@ -84,7 +85,9 @@ export function SignInForm({
       );
 
       if (signInError) {
-        onError?.(signInError.message);
+        const errorMessage = signInError.message;
+        setSubmitError(errorMessage);
+        onError?.(errorMessage);
         return;
       }
 
@@ -93,7 +96,10 @@ export function SignInForm({
         router.push(redirectTo);
       }
     } catch (error) {
-      onError?.(error instanceof Error ? error.message : 'Erro ao fazer login');
+      const errorMessage =
+        error instanceof Error ? error.message : 'Erro ao fazer login';
+      setSubmitError(errorMessage);
+      onError?.(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -121,10 +127,12 @@ export function SignInForm({
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Error Alert */}
-          {error && (
+          {(error || submitError) && (
             <Alert variant="destructive">
               <XCircle className="h-4 w-4" />
-              <AlertDescription>{error.message}</AlertDescription>
+              <AlertDescription>
+                {submitError || error?.message}
+              </AlertDescription>
             </Alert>
           )}
 
@@ -164,6 +172,7 @@ export function SignInForm({
                 size="sm"
                 className="absolute right-0 top-0 h-full px-3"
                 onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? 'Ocultar senha' : 'Mostrar senha'}
               >
                 {showPassword ? (
                   <EyeOff className="h-4 w-4" />

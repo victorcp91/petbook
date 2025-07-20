@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="2.210" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2025-07-20T14:37:10" tests="0" file="cypress/e2e/basic-auth.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Basic Authentication" timestamp="2025-07-20T14:37:10" tests="3" time="2.210" failures="0">
+    <testcase name="Basic Authentication should load the signin page correctly" time="0.572" classname="should load the signin page correctly">
+    </testcase>
+    <testcase name="Basic Authentication should have proper form validation" time="0.448" classname="should have proper form validation">
+    </testcase>
+    <testcase name="Basic Authentication should allow typing in form fields" time="1.111" classname="should allow typing in form fields">
+    </testcase>
+  </testsuite>
+</testsuites>

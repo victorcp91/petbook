@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="342.717" tests="7" failures="7">
+  <testsuite name="Root Suite" timestamp="2025-07-20T14:23:27" tests="0" file="cypress/e2e/auth.cy.ts" time="0.000" failures="0">
+  </testsuite>
+  <testsuite name="Authentication Flow" timestamp="2025-07-20T14:23:27" tests="7" time="342.717" failures="7">
+    <testcase name="Authentication Flow should navigate to sign in page" time="16.200" classname="should navigate to sign in page">
+      <failure message="Timed out retrying after 15000ms: expected &apos;&lt;h1.text-3xl.font-bold.text-gray-900.mb-2&gt;&apos; to contain &apos;Entrar&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 15000ms: expected '<h1.text-3xl.font-bold.text-gray-900.mb-2>' to contain 'Entrar'
+    at Context.eval (webpack://petbook/./cypress/e2e/auth.cy.ts:8:17)]]></failure>
+    </testcase>
+    <testcase name="Authentication Flow should navigate to sign up page" time="16.159" classname="should navigate to sign up page">
+      <failure message="Timed out retrying after 15000ms: expected &apos;&lt;h1.text-3xl.font-bold.text-gray-900.mb-2&gt;&apos; to contain &apos;Criar Conta&apos;" type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 15000ms: expected '<h1.text-3xl.font-bold.text-gray-900.mb-2>' to contain 'Criar Conta'
+    at Context.eval (webpack://petbook/./cypress/e2e/auth.cy.ts:16:17)]]></failure>
+    </testcase>
+    <testcase name="Authentication Flow should show validation errors for empty form submission" time="16.153" classname="should show validation errors for empty form submission">
+      <failure message="Timed out retrying after 15000ms: Expected to find element: `[data-testid=&quot;signin-button&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 15000ms: Expected to find element: `[data-testid="signin-button"]`, but never found it.
+    at Context.eval (webpack://petbook/./cypress/e2e/auth.cy.ts:31:7)]]></failure>
+    </testcase>
+    <testcase name="Authentication Flow should show validation errors for invalid email format" time="16.101" classname="should show validation errors for invalid email format">
+      <failure message="Timed out retrying after 15000ms: Expected to find element: `[data-testid=&quot;email-input&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 15000ms: Expected to find element: `[data-testid="email-input"]`, but never found it.
+    at Context.eval (webpack://petbook/./cypress/e2e/auth.cy.ts:40:7)]]></failure>
+    </testcase>
+    <testcase name="Authentication Flow should navigate between sign in and sign up pages" time="16.125" classname="should navigate between sign in and sign up pages">
+      <failure message="Timed out retrying after 15000ms: Expected to find element: `[data-testid=&quot;signup-link&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 15000ms: Expected to find element: `[data-testid="signup-link"]`, but never found it.
+    at Context.eval (webpack://petbook/./cypress/e2e/auth.cy.ts:49:7)]]></failure>
+    </testcase>
+    <testcase name="Authentication Flow should show password requirements on sign up page" time="16.126" classname="should show password requirements on sign up page">
+      <failure message="Timed out retrying after 15000ms: Expected to find element: `[data-testid=&quot;password-input&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 15000ms: Expected to find element: `[data-testid="password-input"]`, but never found it.
+    at Context.eval (webpack://petbook/./cypress/e2e/auth.cy.ts:58:7)]]></failure>
+    </testcase>
+    <testcase name="Authentication Flow should validate password confirmation match" time="16.096" classname="should validate password confirmation match">
+      <failure message="Timed out retrying after 15000ms: Expected to find element: `[data-testid=&quot;password-input&quot;]`, but never found it." type="AssertionError"><![CDATA[AssertionError: Timed out retrying after 15000ms: Expected to find element: `[data-testid="password-input"]`, but never found it.
+    at Context.eval (webpack://petbook/./cypress/e2e/auth.cy.ts:66:7)]]></failure>
+    </testcase>
+  </testsuite>
+</testsuites>

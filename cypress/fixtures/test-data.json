@@ -1,0 +1,222 @@
+{
+  "users": {
+    "owner": {
+      "id": "owner-user-id",
+      "email": "joao.silva@petbook.com",
+      "password": "SecurePassword123!",
+      "fullName": "João Silva",
+      "phone": "(11) 99999-9999",
+      "cpf": "123.456.789-09",
+      "role": "owner",
+      "shopName": "Pet Shop Silva",
+      "shopAddress": "Rua das Flores, 123 - São Paulo, SP",
+      "shopPhone": "(11) 88888-8888"
+    },
+    "groomer": {
+      "id": "groomer-user-id",
+      "email": "maria.groomer@petbook.com",
+      "password": "SecurePassword123!",
+      "fullName": "Maria Groomer",
+      "phone": "(11) 99999-8888",
+      "cpf": "987.654.321-00",
+      "role": "groomer",
+      "pin": "1234"
+    },
+    "attendant": {
+      "id": "attendant-user-id",
+      "email": "carlos.attendant@petbook.com",
+      "password": "SecurePassword123!",
+      "fullName": "Carlos Attendant",
+      "phone": "(11) 99999-7777",
+      "cpf": "456.789.123-00",
+      "role": "attendant"
+    }
+  },
+  "pets": {
+    "dog": {
+      "id": "pet-dog-1",
+      "name": "Rex",
+      "species": "dog",
+      "breed": "Golden Retriever",
+      "birthDate": "2020-01-15",
+      "weight": 25.5,
+      "color": "Dourado",
+      "microchip": "123456789012345",
+      "notes": "Pet muito dócil e brincalhão"
+    },
+    "cat": {
+      "id": "pet-cat-1",
+      "name": "Luna",
+      "species": "cat",
+      "breed": "Persian",
+      "birthDate": "2021-03-20",
+      "weight": 4.2,
+      "color": "Branco",
+      "microchip": "987654321098765",
+      "notes": "Gata tranquila e independente"
+    },
+    "bird": {
+      "id": "pet-bird-1",
+      "name": "Pipoca",
+      "species": "bird",
+      "breed": "Canário",
+      "birthDate": "2022-06-10",
+      "weight": 0.05,
+      "color": "Amarelo",
+      "notes": "Pássaro cantor"
+    }
+  },
+  "appointments": {
+    "scheduled": {
+      "id": "appointment-1",
+      "petId": "pet-dog-1",
+      "petName": "Rex",
+      "serviceType": "banho_tosa",
+      "appointmentDate": "2024-01-20T10:00:00Z",
+      "duration": 90,
+      "status": "scheduled",
+      "notes": "Primeira vez no pet shop",
+      "price": 80.0
+    },
+    "in_progress": {
+      "id": "appointment-2",
+      "petId": "pet-cat-1",
+      "petName": "Luna",
+      "serviceType": "banho",
+      "appointmentDate": "2024-01-20T14:00:00Z",
+      "duration": 60,
+      "status": "in_progress",
+      "notes": "Banho simples",
+      "price": 50.0
+    },
+    "completed": {
+      "id": "appointment-3",
+      "petId": "pet-bird-1",
+      "petName": "Pipoca",
+      "serviceType": "tosa",
+      "appointmentDate": "2024-01-19T09:00:00Z",
+      "duration": 30,
+      "status": "completed",
+      "notes": "Tosa de penas",
+      "price": 30.0
+    }
+  },
+  "clients": {
+    "client1": {
+      "id": "client-1",
+      "name": "João Silva",
+      "email": "joao.silva@email.com",
+      "phone": "(11) 99999-9999",
+      "address": "Rua das Flores, 123 - São Paulo, SP",
+      "pets": ["pet-dog-1"]
+    },
+    "client2": {
+      "id": "client-2",
+      "name": "Maria Santos",
+      "email": "maria.santos@email.com",
+      "phone": "(11) 88888-8888",
+      "address": "Rua das Palmeiras, 456 - São Paulo, SP",
+      "pets": ["pet-cat-1", "pet-bird-1"]
+    }
+  },
+  "services": {
+    "banho": {
+      "id": "service-banho",
+      "name": "Banho",
+      "description": "Banho completo com shampoo especial",
+      "duration": 60,
+      "price": 50.0,
+      "category": "basic"
+    },
+    "tosa": {
+      "id": "service-tosa",
+      "name": "Tosa",
+      "description": "Tosa higiênica ou tosa completa",
+      "duration": 45,
+      "price": 40.0,
+      "category": "basic"
+    },
+    "banho_tosa": {
+      "id": "service-banho-tosa",
+      "name": "Banho & Tosa",
+      "description": "Banho completo + tosa",
+      "duration": 90,
+      "price": 80.0,
+      "category": "complete"
+    },
+    "spa": {
+      "id": "service-spa",
+      "name": "Spa Day",
+      "description": "Banho + tosa + hidratação + perfume",
+      "duration": 120,
+      "price": 120.0,
+      "category": "premium"
+    }
+  },
+  "queue": {
+    "waiting": {
+      "id": "queue-1",
+      "petId": "pet-dog-1",
+      "petName": "Rex",
+      "ownerName": "João Silva",
+      "serviceType": "banho_tosa",
+      "status": "waiting",
+      "estimatedTime": 30,
+      "priority": 1
+    },
+    "in_progress": {
+      "id": "queue-2",
+      "petId": "pet-cat-1",
+      "petName": "Luna",
+      "ownerName": "Maria Santos",
+      "serviceType": "banho",
+      "status": "in_progress",
+      "estimatedTime": 15,
+      "priority": 2,
+      "startTime": "2024-01-20T14:00:00Z"
+    }
+  },
+  "reports": {
+    "daily": {
+      "date": "2024-01-20",
+      "totalAppointments": 15,
+      "totalRevenue": 1200.0,
+      "averageRating": 4.8,
+      "topServices": [
+        { "name": "banho_tosa", "count": 8 },
+        { "name": "banho", "count": 5 },
+        { "name": "tosa", "count": 2 }
+      ]
+    },
+    "monthly": {
+      "month": "2024-01",
+      "totalAppointments": 320,
+      "totalRevenue": 25600.0,
+      "averageRating": 4.7,
+      "growth": 12.5
+    }
+  },
+  "settings": {
+    "shop": {
+      "name": "Pet Shop Silva",
+      "address": "Rua das Flores, 123 - São Paulo, SP",
+      "phone": "(11) 88888-8888",
+      "email": "contato@petshopsilva.com",
+      "workingHours": {
+        "monday": { "open": "08:00", "close": "18:00" },
+        "tuesday": { "open": "08:00", "close": "18:00" },
+        "wednesday": { "open": "08:00", "close": "18:00" },
+        "thursday": { "open": "08:00", "close": "18:00" },
+        "friday": { "open": "08:00", "close": "18:00" },
+        "saturday": { "open": "08:00", "close": "16:00" },
+        "sunday": { "open": "closed", "close": "closed" }
+      }
+    },
+    "notifications": {
+      "email": true,
+      "sms": true,
+      "whatsapp": true,
+      "reminderTime": 24
+    }
+  }
+}

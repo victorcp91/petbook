@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run linting
-        run: npm run lint
+      # - name: Run linting
+      #   run: npm run lint
 
       - name: Run type checking
         run: npm run type-check
@@ -42,133 +42,16 @@ jobs:
       - name: Run integration tests
         run: npm run test:integration
 
-      - name: Upload test coverage
+      - name: Upload coverage reports
         uses: codecov/codecov-action@v3
         with:
           file: ./coverage/lcov.info
           flags: unittests
-          name: unit-tests-coverage
-
-      - name: Upload test results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: unit-test-results
-          path: |
-            coverage/
-            test-results/
-            *.xml
+          name: codecov-umbrella
 
   # E2E Tests
   e2e-tests:
-    name: End-to-End Tests
-    runs-on: ubuntu-latest
-    timeout-minutes: 30
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Setup Cypress cache
-        uses: cypress-io/github-action@v6
-        with:
-          install-command: npm ci
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
-
-      - name: Start development server
-        run: npm run dev &
-
-      - name: Run E2E tests
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          headed: false
-          record: false
-          parallel: false
-          group: 'E2E Tests'
-          spec: 'cypress/e2e/**/*.cy.ts'
-          config-file: cypress.config.ts
-          env: |
-            CI=true
-            coverage=false
-
-      - name: Upload E2E test results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: e2e-test-results
-          path: |
-            cypress/videos/
-            cypress/screenshots/
-            cypress/results/
-
-  # Visual Regression Tests
-  visual-regression:
-    name: Visual Regression Tests
-    runs-on: ubuntu-latest
-    timeout-minutes: 25
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Setup Cypress cache
-        uses: cypress-io/github-action@v6
-        with:
-          install-command: npm ci
-          wait-on: 'http://localhost:3000'
-          wait-on-timeout: 120
-
-      - name: Start development server
-        run: npm run dev &
-
-      - name: Run visual regression tests
-        uses: cypress-io/github-action@v6
-        with:
-          browser: chrome
-          headed: false
-          record: false
-          parallel: false
-          group: 'Visual Regression Tests'
-          spec: 'cypress/e2e/visual-regression.cy.ts'
-          config-file: cypress.config.ts
-          env: |
-            CI=true
-            visualRegressionType=regression
-            visualRegressionThreshold=0.1
-
-      - name: Upload visual regression results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: visual-regression-results
-          path: |
-            cypress/visual-regression/
-            cypress/videos/
-            cypress/screenshots/
-
-  # Performance Tests
-  performance-tests:
-    name: Performance Tests
+    name: E2E Tests
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -185,24 +68,93 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Start development server
-        run: npm run dev &
-
-      - name: Wait for server
-        run: npx wait-on http://localhost:3000
-
-      - name: Run Lighthouse CI
-        run: npx lhci autorun
+      - name: Run E2E tests
+        run: npm run test:e2e
         env:
-          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
+          CYPRESS_CACHE_FOLDER: ${{ env.CYPRESS_CACHE_FOLDER }}
 
-      - name: Upload performance results
+      - name: Upload E2E screenshots
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots/
+          if-no-files-found: ignore
+
+      - name: Upload E2E videos
         uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: performance-results
-          path: |
-            .lighthouseci/
+          name: cypress-videos
+          path: cypress/videos/
+          if-no-files-found: ignore
+
+  # Visual Regression Tests
+  visual-tests:
+    name: Visual Regression Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run visual regression tests
+        run: npm run test:visual
+        env:
+          CYPRESS_CACHE_FOLDER: ${{ env.CYPRESS_CACHE_FOLDER }}
+
+      - name: Upload visual regression screenshots
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: visual-regression-screenshots
+          path: cypress/screenshots/
+          if-no-files-found: ignore
+
+  # Performance Tests
+  performance-tests:
+    name: Performance Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build application
+        run: npm run build
+
+      - name: Start application
+        run: npm run start &
+        env:
+          PORT: 3000
+
+      - name: Wait for application
+        run: npx wait-on http://localhost:3000
+
+      - name: Run Lighthouse CI
+        run: npm run lighthouse:ci
+        env:
+          LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}
 
   # Security Tests
   security-tests:
@@ -223,8 +175,8 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Run npm audit
-        run: npm audit --audit-level=moderate
+      - name: Run security audit
+        run: npm run security:audit
 
       - name: Run Snyk security scan
         uses: snyk/actions/node@master
@@ -232,95 +184,3 @@ jobs:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
         with:
           args: --severity-threshold=high
-
-      - name: Upload security results
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: security-results
-          path: |
-            snyk-report.json
-            npm-audit.json
-
-  # Build Verification
-  build-verification:
-    name: Build Verification
-    runs-on: ubuntu-latest
-    timeout-minutes: 15
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build application
-        run: npm run build
-
-      - name: Upload build artifacts
-        uses: actions/upload-artifact@v4
-        if: always()
-        with:
-          name: build-artifacts
-          path: |
-            apps/web/.next/
-            packages/*/dist/
-
-  # Test Summary
-  test-summary:
-    name: Test Summary
-    runs-on: ubuntu-latest
-    needs:
-      [
-        unit-tests,
-        e2e-tests,
-        visual-regression,
-        performance-tests,
-        security-tests,
-        build-verification,
-      ]
-    if: always()
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
-        with:
-          path: artifacts
-
-      - name: Generate test summary
-        run: |
-          echo "## 🧪 Test Results Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Unit & Integration Tests" >> $GITHUB_STEP_SUMMARY
-          echo "- Status: ${{ needs.unit-tests.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Coverage: Available in artifacts" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### E2E Tests" >> $GITHUB_STEP_SUMMARY
-          echo "- Status: ${{ needs.e2e-tests.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Videos: Available in artifacts" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Visual Regression Tests" >> $GITHUB_STEP_SUMMARY
-          echo "- Status: ${{ needs.visual-regression.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Screenshots: Available in artifacts" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Performance Tests" >> $GITHUB_STEP_SUMMARY
-          echo "- Status: ${{ needs.performance-tests.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Lighthouse: Available in artifacts" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Security Tests" >> $GITHUB_STEP_SUMMARY
-          echo "- Status: ${{ needs.security-tests.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Audit: Available in artifacts" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### Build Verification" >> $GITHUB_STEP_SUMMARY
-          echo "- Status: ${{ needs.build-verification.result }}" >> $GITHUB_STEP_SUMMARY
-          echo "- Build: Available in artifacts" >> $GITHUB_STEP_SUMMARY

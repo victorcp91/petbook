@@ -7,10 +7,10 @@
       "outputs": [".next/**", "!.next/cache/**", "dist/**"]
     },
     "lint": {
-      "dependsOn": ["^lint"]
+      "outputs": []
     },
     "type-check": {
-      "dependsOn": ["^type-check"]
+      "outputs": []
     },
     "test": {
       "dependsOn": ["^test"],
@@ -24,28 +24,6 @@
     "test:coverage": {
       "dependsOn": ["^test:coverage"],
       "outputs": ["coverage/**"]
-    },
-    "ci:check": {
-      "dependsOn": ["^ci:check"]
-    },
-    "ci:build": {
-      "dependsOn": ["^ci:build"],
-      "outputs": [".next/**", "dist/**"]
-    },
-    "security:audit": {
-      "cache": false
-    },
-    "security:check": {
-      "cache": false
-    },
-    "deps:check": {
-      "cache": false
-    },
-    "deps:update": {
-      "cache": false
-    },
-    "deps:audit": {
-      "cache": false
     },
     "dev": {
       "cache": false,

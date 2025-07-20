@@ -225,7 +225,7 @@ export const rolePermissions = {
  */
 export function hasPermission(userRole: UserRole, permission: string): boolean {
   const permissions = rolePermissions[userRole] || [];
-  return permissions.includes(permission as any);
+  return (permissions as readonly string[]).includes(permission);
 }
 
 /**

@@ -14,7 +14,7 @@ export interface User {
   id: string;
   shop_id: string;
   email: string;
-  role: "owner" | "admin" | "groomer" | "attendant";
+  role: 'owner' | 'admin' | 'groomer' | 'attendant';
   created_at: string;
   updated_at: string;
 }
@@ -50,7 +50,7 @@ export interface Appointment {
   groomer_id: string;
   date: string;
   time: string;
-  status: "scheduled" | "in_progress" | "completed" | "cancelled";
+  status: 'scheduled' | 'in_progress' | 'completed' | 'cancelled';
   notes: string;
   created_at: string;
   updated_at: string;
@@ -103,7 +103,7 @@ export interface CreateShopData {
 export interface CreateUserData {
   shop_id: string;
   email: string;
-  role: "owner" | "admin" | "groomer" | "attendant";
+  role: 'owner' | 'admin' | 'groomer' | 'attendant';
 }
 
 export interface CreateClientData {

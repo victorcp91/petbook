@@ -1,10 +1,10 @@
-import { supabase } from "./client";
-import type { User } from "@supabase/supabase-js";
+import { supabase } from './client';
+import type { User } from '@supabase/supabase-js';
 
 export interface AuthUser {
   id: string;
   email: string;
-  role: "owner" | "admin" | "groomer" | "attendant";
+  role: 'owner' | 'admin' | 'groomer' | 'attendant';
   shop_id: string;
 }
 
@@ -49,9 +49,9 @@ export async function getAuthUser(): Promise<AuthUser | null> {
 
   // Get user details from our users table
   const { data: userData, error } = await supabase
-    .from("users")
-    .select("*")
-    .eq("id", user.id)
+    .from('users')
+    .select('*')
+    .eq('id', user.id)
     .single();
 
   if (error || !userData) return null;

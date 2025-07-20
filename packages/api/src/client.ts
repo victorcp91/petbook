@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!;
@@ -43,7 +43,7 @@ export interface Database {
           id: string;
           shop_id: string;
           email: string;
-          role: "owner" | "admin" | "groomer" | "attendant";
+          role: 'owner' | 'admin' | 'groomer' | 'attendant';
           created_at: string;
           updated_at: string;
         };
@@ -51,7 +51,7 @@ export interface Database {
           id?: string;
           shop_id: string;
           email: string;
-          role: "owner" | "admin" | "groomer" | "attendant";
+          role: 'owner' | 'admin' | 'groomer' | 'attendant';
           created_at?: string;
           updated_at?: string;
         };
@@ -59,7 +59,7 @@ export interface Database {
           id?: string;
           shop_id?: string;
           email?: string;
-          role?: "owner" | "admin" | "groomer" | "attendant";
+          role?: 'owner' | 'admin' | 'groomer' | 'attendant';
           created_at?: string;
           updated_at?: string;
         };
@@ -142,7 +142,7 @@ export interface Database {
           groomer_id: string;
           date: string;
           time: string;
-          status: "scheduled" | "in_progress" | "completed" | "cancelled";
+          status: 'scheduled' | 'in_progress' | 'completed' | 'cancelled';
           notes: string;
           created_at: string;
           updated_at: string;
@@ -154,7 +154,7 @@ export interface Database {
           groomer_id: string;
           date: string;
           time: string;
-          status?: "scheduled" | "in_progress" | "completed" | "cancelled";
+          status?: 'scheduled' | 'in_progress' | 'completed' | 'cancelled';
           notes?: string;
           created_at?: string;
           updated_at?: string;
@@ -166,7 +166,7 @@ export interface Database {
           groomer_id?: string;
           date?: string;
           time?: string;
-          status?: "scheduled" | "in_progress" | "completed" | "cancelled";
+          status?: 'scheduled' | 'in_progress' | 'completed' | 'cancelled';
           notes?: string;
           created_at?: string;
           updated_at?: string;

@@ -1,45 +1,45 @@
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+import { type ClassValue, clsx } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 export function formatCurrency(value: number): string {
-  return new Intl.NumberFormat("pt-BR", {
-    style: "currency",
-    currency: "BRL",
+  return new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
   }).format(value);
 }
 
 export function formatDate(date: Date): string {
-  return new Intl.DateTimeFormat("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
+  return new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
   }).format(date);
 }
 
 export function formatDateTime(date: Date): string {
-  return new Intl.DateTimeFormat("pt-BR", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-    hour: "2-digit",
-    minute: "2-digit",
+  return new Intl.DateTimeFormat('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
   }).format(date);
 }
 
 export function formatTime(date: Date): string {
-  return new Intl.DateTimeFormat("pt-BR", {
-    hour: "2-digit",
-    minute: "2-digit",
+  return new Intl.DateTimeFormat('pt-BR', {
+    hour: '2-digit',
+    minute: '2-digit',
   }).format(date);
 }
 
 export function formatPhoneNumber(phone: string): string {
   // Remove all non-digit characters
-  const cleaned = phone.replace(/\D/g, "");
+  const cleaned = phone.replace(/\D/g, '');
 
   // Format Brazilian phone number
   if (cleaned.length === 11) {
@@ -53,7 +53,7 @@ export function formatPhoneNumber(phone: string): string {
 
 export function formatCPF(cpf: string): string {
   // Remove all non-digit characters
-  const cleaned = cpf.replace(/\D/g, "");
+  const cleaned = cpf.replace(/\D/g, '');
 
   // Format CPF
   if (cleaned.length === 11) {
@@ -70,7 +70,7 @@ export function validateEmail(email: string): boolean {
 
 export function validateCPF(cpf: string): boolean {
   // Remove all non-digit characters
-  const cleaned = cpf.replace(/\D/g, "");
+  const cleaned = cpf.replace(/\D/g, '');
 
   // Check if it has 11 digits
   if (cleaned.length !== 11) return false;

@@ -1,0 +1,25 @@
+{
+  "ignore": [
+    "@radix-ui/react-dropdown-menu",
+    "next",
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript",
+    "@cypress/code-coverage",
+    "@cypress/vite-dev-server",
+    "@testing-library/jest-dom",
+    "@testing-library/react",
+    "@testing-library/user-event",
+    "@types/jest",
+    "@types/node",
+    "@typescript-eslint/eslint-plugin",
+    "@typescript-eslint/parser",
+    "cypress-multi-reporters",
+    "cypress-visual-regression",
+    "dotenv",
+    "lighthouse",
+    "mocha-junit-reporter",
+    "react",
+    "wait-on"
+  ]
+}

@@ -37,7 +37,7 @@ jobs:
         run: npm run type-check
 
       - name: Check for unused dependencies
-        run: npx depcheck
+        run: node scripts/check-deps.js
 
       - name: Check bundle size
         run: |

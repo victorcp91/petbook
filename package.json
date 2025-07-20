@@ -82,6 +82,7 @@
     "npm": ">=9.0.0"
   },
   "dependencies": {
-    "@radix-ui/react-dropdown-menu": "^2.1.15"
+    "@radix-ui/react-dropdown-menu": "^2.1.15",
+    "next": "^15.4.2"
   }
 }

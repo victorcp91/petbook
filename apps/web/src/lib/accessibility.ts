@@ -1,3 +1,5 @@
+'use client';
+
 /**
  * Accessibility utilities for PetBook components
  *

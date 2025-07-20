@@ -806,3 +806,26 @@
 2025-07-20T18:51:51.334821Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
 2025-07-20T18:52:00.535355Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignInForm.test.tsx")}
 2025-07-20T18:52:00.535482Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:58:52.462481Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("jest.config.js")}
+2025-07-20T18:58:52.463872Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-20T18:58:52.561011Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("jest.config.js")}
+2025-07-20T18:58:52.561025Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-20T18:59:04.237884Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/lib/accessibility.ts")}
+2025-07-20T18:59:04.239278Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:59:21.726254Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/components/ui/components-showcase.tsx")}
+2025-07-20T18:59:21.726562Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:59:42.923176Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("package-lock.json")}
+2025-07-20T18:59:42.923207Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-20T19:00:11.523775Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("package.json")}
+2025-07-20T19:00:11.524378Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(All)
+2025-07-20T19:00:11.722006Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("package-lock.json")}
+2025-07-20T19:00:11.722014Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-20T19:00:24.921985Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/package.json")}
+2025-07-20T19:00:24.922014Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T19:00:31.321679Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/package.json")}
+2025-07-20T19:00:31.322324Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T19:00:31.421460Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/package.json")}
+2025-07-20T19:00:31.421487Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T19:00:31.421746Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-07-20T19:01:10.229465Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("coverage")}
+2025-07-20T19:01:10.230606Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))

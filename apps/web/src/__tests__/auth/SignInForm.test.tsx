@@ -193,6 +193,8 @@ describe('SignInForm', () => {
 
       await waitFor(() => {
         expect(submitButton).toBeDisabled();
+      });
+      await waitFor(() => {
         expect(screen.getByText(/entrando/i)).toBeInTheDocument();
       });
 
@@ -377,6 +379,8 @@ describe('SignInForm', () => {
 
       await waitFor(() => {
         expect(mockAuthContext.signIn).toHaveBeenCalledTimes(1);
+      });
+      await waitFor(() => {
         expect(submitButton).toBeDisabled();
       });
 

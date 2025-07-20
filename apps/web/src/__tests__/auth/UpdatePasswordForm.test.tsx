@@ -211,19 +211,27 @@ describe('UpdatePasswordForm', () => {
         expect(
           screen.queryByText(/senha deve ter pelo menos 8 caracteres/i)
         ).not.toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(
           screen.queryByText(
             /senha deve conter pelo menos uma letra maiúscula/i
           )
         ).not.toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(
           screen.queryByText(
             /senha deve conter pelo menos uma letra minúscula/i
           )
         ).not.toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(
           screen.queryByText(/senha deve conter pelo menos um número/i)
         ).not.toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(
           screen.queryByText(
             /senha deve conter pelo menos um caractere especial/i
@@ -313,6 +321,8 @@ describe('UpdatePasswordForm', () => {
 
       await waitFor(() => {
         expect(submitButton).toBeDisabled();
+      });
+      await waitFor(() => {
         expect(screen.getByText(/atualizando/i)).toBeInTheDocument();
       });
 
@@ -534,6 +544,8 @@ describe('UpdatePasswordForm', () => {
 
       await waitFor(() => {
         expect(mockAuthContext.updatePassword).toHaveBeenCalledTimes(1);
+      });
+      await waitFor(() => {
         expect(submitButton).toBeDisabled();
       });
 
@@ -564,6 +576,8 @@ describe('UpdatePasswordForm', () => {
 
       await waitFor(() => {
         expect(passwordInput).toHaveValue('');
+      });
+      await waitFor(() => {
         expect(confirmPasswordInput).toHaveValue('');
       });
     });
@@ -590,6 +604,8 @@ describe('UpdatePasswordForm', () => {
 
       await waitFor(() => {
         expect(passwordInput).toHaveValue('NewPassword123!');
+      });
+      await waitFor(() => {
         expect(confirmPasswordInput).toHaveValue('NewPassword123!');
       });
     });

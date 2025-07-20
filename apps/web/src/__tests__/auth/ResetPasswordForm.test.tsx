@@ -166,6 +166,8 @@ describe('ResetPasswordForm', () => {
         expect(
           screen.getByText(/email enviado com sucesso/i)
         ).toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(
           screen.getByText(/verifique sua caixa de entrada/i)
         ).toBeInTheDocument();
@@ -194,6 +196,8 @@ describe('ResetPasswordForm', () => {
 
       await waitFor(() => {
         expect(submitButton).toBeDisabled();
+      });
+      await waitFor(() => {
         expect(screen.getByText(/enviando/i)).toBeInTheDocument();
       });
 
@@ -341,6 +345,8 @@ describe('ResetPasswordForm', () => {
 
       await waitFor(() => {
         expect(mockAuthContext.resetPassword).toHaveBeenCalledTimes(1);
+      });
+      await waitFor(() => {
         expect(submitButton).toBeDisabled();
       });
 

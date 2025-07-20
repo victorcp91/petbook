@@ -140,16 +140,26 @@ describe('SignUpForm', () => {
 
     await waitFor(() => {
       expect(screen.getByText('Nome é obrigatório')).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(screen.getByText('Email é obrigatório')).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(
         screen.getByText(/senha deve ter pelo menos 8 caracteres/i)
       ).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(
         screen.getByText('Nome do pet shop é obrigatório')
       ).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(
         screen.getByText('Endereço do pet shop é obrigatório')
       ).toBeInTheDocument();
+    });
+    await waitFor(() => {
       expect(
         screen.getByText('Telefone do pet shop é obrigatório')
       ).toBeInTheDocument();

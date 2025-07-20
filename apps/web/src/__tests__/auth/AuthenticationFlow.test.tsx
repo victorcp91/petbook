@@ -243,6 +243,8 @@ describe('Authentication Flow Integration', () => {
         expect(mockAuthContext.resetPassword).toHaveBeenCalledWith(
           'joao@example.com'
         );
+      });
+      await waitFor(() => {
         expect(
           screen.getByText(/email enviado com sucesso/i)
         ).toBeInTheDocument();
@@ -271,6 +273,8 @@ describe('Authentication Flow Integration', () => {
         expect(mockAuthContext.updatePassword).toHaveBeenCalledWith(
           'NewPassword123!'
         );
+      });
+      await waitFor(() => {
         expect(
           screen.getByText(/senha atualizada com sucesso/i)
         ).toBeInTheDocument();
@@ -338,7 +342,11 @@ describe('Authentication Flow Integration', () => {
 
       await waitFor(() => {
         expect(screen.getByText(/nome é obrigatório/i)).toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(screen.getByText(/email é obrigatório/i)).toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(screen.getByText(/senha é obrigatória/i)).toBeInTheDocument();
       });
 
@@ -351,6 +359,8 @@ describe('Authentication Flow Integration', () => {
 
       await waitFor(() => {
         expect(screen.getByText(/email é obrigatório/i)).toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(screen.getByText(/senha é obrigatória/i)).toBeInTheDocument();
       });
 
@@ -539,6 +549,8 @@ describe('Authentication Flow Integration', () => {
 
       await waitFor(() => {
         expect(submitButton).toBeDisabled();
+      });
+      await waitFor(() => {
         expect(screen.getByText(/entrando/i)).toBeInTheDocument();
       });
 
@@ -587,6 +599,8 @@ describe('Authentication Flow Integration', () => {
 
       await waitFor(() => {
         expect(signUpSubmitButton).toBeDisabled();
+      });
+      await waitFor(() => {
         expect(screen.getByText(/criando conta/i)).toBeInTheDocument();
       });
 
@@ -637,6 +651,8 @@ describe('Authentication Flow Integration', () => {
         expect(
           screen.getByText(/email enviado com sucesso/i)
         ).toBeInTheDocument();
+      });
+      await waitFor(() => {
         expect(
           screen.getByText(/verifique sua caixa de entrada/i)
         ).toBeInTheDocument();

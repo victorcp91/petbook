@@ -749,3 +749,60 @@
 2025-07-20T17:54:43.009104Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
 2025-07-20T17:54:45.004277Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/tsconfig.tsbuildinfo")}
 2025-07-20T17:54:45.004296Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:42:34.651001Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("package-lock.json")}
+2025-07-20T18:42:34.651268Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-20T18:42:44.048327Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ui/.eslintrc.js")}
+2025-07-20T18:42:44.048357Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/ui"), path: AnchoredSystemPathBuf("packages/ui") }}))
+2025-07-20T18:42:46.448786Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ui/.eslintrc.js")}
+2025-07-20T18:42:46.448808Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/ui"), path: AnchoredSystemPathBuf("packages/ui") }}))
+2025-07-20T18:42:52.247500Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/.eslintrc.js")}
+2025-07-20T18:42:52.247547Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2025-07-20T18:42:55.047569Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/.eslintrc.js")}
+2025-07-20T18:42:55.047595Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2025-07-20T18:43:00.749058Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/utils/.eslintrc.js")}
+2025-07-20T18:43:00.749081Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/utils"), path: AnchoredSystemPathBuf("packages/utils") }}))
+2025-07-20T18:43:03.947951Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/utils/.eslintrc.js")}
+2025-07-20T18:43:03.947974Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/utils"), path: AnchoredSystemPathBuf("packages/utils") }}))
+2025-07-20T18:43:16.848014Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/api/package.json")}
+2025-07-20T18:43:16.848050Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/api"), path: AnchoredSystemPathBuf("packages/api") }}))
+2025-07-20T18:43:23.347293Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/utils/package.json")}
+2025-07-20T18:43:23.347321Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/utils"), path: AnchoredSystemPathBuf("packages/utils") }}))
+2025-07-20T18:43:34.846515Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("packages/ui/package.json")}
+2025-07-20T18:43:34.846616Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/ui"), path: AnchoredSystemPathBuf("packages/ui") }}))
+2025-07-20T18:43:48.547035Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf(".eslintrc.js")}
+2025-07-20T18:43:48.547058Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-20T18:44:06.847059Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("package.json")}
+2025-07-20T18:44:06.847080Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(All)
+2025-07-20T18:44:07.146161Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("package-lock.json")}
+2025-07-20T18:44:07.146174Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Root, path: AnchoredSystemPathBuf("") }}))
+2025-07-20T18:45:36.845515Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/components/ui/components-showcase.tsx")}
+2025-07-20T18:45:36.845756Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:45:45.746091Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/components/ui/components-showcase.tsx")}
+2025-07-20T18:45:45.748044Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:46:55.342750Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/AuthenticationFlow.test.tsx")}
+2025-07-20T18:46:55.342768Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:47:05.741400Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/AuthenticationFlow.test.tsx")}
+2025-07-20T18:47:05.741431Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:47:43.840495Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/ResetPasswordForm.test.tsx")}
+2025-07-20T18:47:43.840517Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:47:52.641489Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/ResetPasswordForm.test.tsx")}
+2025-07-20T18:47:52.641511Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:47:52.641633Z  WARN turborepo_lib::package_changes_watcher: hashes are the same, no need to rerun
+2025-07-20T18:48:33.942962Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignUpForm.test.tsx")}
+2025-07-20T18:48:33.943219Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:50:15.240270Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/UpdatePasswordForm.test.tsx")}
+2025-07-20T18:50:15.240307Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:50:22.236708Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/UpdatePasswordForm.test.tsx")}
+2025-07-20T18:50:22.236728Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:50:33.636692Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/UpdatePasswordForm.test.tsx")}
+2025-07-20T18:50:33.636706Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:50:39.135950Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/UpdatePasswordForm.test.tsx")}
+2025-07-20T18:50:39.135967Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:50:47.138544Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/UpdatePasswordForm.test.tsx")}
+2025-07-20T18:50:47.138635Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:51:39.835235Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/ResetPasswordForm.test.tsx")}
+2025-07-20T18:51:39.835256Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:51:51.334804Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignInForm.test.tsx")}
+2025-07-20T18:51:51.334821Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))
+2025-07-20T18:52:00.535355Z  WARN turborepo_lib::package_changes_watcher: changed_files: {AnchoredSystemPathBuf("apps/web/src/__tests__/auth/SignInForm.test.tsx")}
+2025-07-20T18:52:00.535482Z  WARN turborepo_lib::package_changes_watcher: changed_packages: Ok(Some({WorkspacePackage { name: Other("@petbook/web"), path: AnchoredSystemPathBuf("apps/web") }}))

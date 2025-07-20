@@ -778,7 +778,7 @@ export function ComponentsShowcase() {
                 <Card>
                   <CardHeader>
                     <CardTitle className="text-lg">
-                      Today's Appointments
+                      Today&apos;s Appointments
                     </CardTitle>
                   </CardHeader>
                   <CardContent>
@@ -845,7 +845,7 @@ export function ComponentsShowcase() {
                         id="email-help"
                         className="text-xs text-petbook-text-muted"
                       >
-                        We'll never share your email with anyone else.
+                        We&apos;ll never share your email with anyone else.
                       </p>
                     </div>
                     <div className="space-y-2">

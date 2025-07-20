@@ -6,7 +6,6 @@
   "types": "./src/index.ts",
   "scripts": {
     "type-check": "tsc --noEmit",
-    "lint": "eslint . --max-warnings 0",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"

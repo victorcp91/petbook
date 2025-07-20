@@ -111,7 +111,7 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/Invalid email format/i)).toBeInTheDocument();
+        expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
       });
     });
 
@@ -130,7 +130,7 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/Password is required/i)).toBeInTheDocument();
+        expect(screen.getByText(/senha é obrigatória/i)).toBeInTheDocument();
       });
     });
 
@@ -147,7 +147,7 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/Invalid email format/i)).toBeInTheDocument();
+        expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
       });
 
       // Test valid email
@@ -158,9 +158,7 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(
-          screen.queryByText(/Invalid email format/i)
-        ).not.toBeInTheDocument();
+        expect(screen.queryByText(/email inválido/i)).not.toBeInTheDocument();
       });
     });
   });
@@ -248,7 +246,9 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/credenciais inválidas/i)).toBeInTheDocument();
+        expect(
+          screen.getByText(/Invalid login credentials/i)
+        ).toBeInTheDocument();
       });
     });
 

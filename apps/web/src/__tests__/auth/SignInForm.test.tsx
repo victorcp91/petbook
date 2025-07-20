@@ -75,7 +75,7 @@ describe('SignInForm', () => {
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
-      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
 
       expect(emailInput).toHaveValue('');
       expect(passwordInput).toHaveValue('');
@@ -174,7 +174,7 @@ describe('SignInForm', () => {
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
-      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       await act(async () => {
@@ -184,10 +184,10 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(mockAuthContext.signIn).toHaveBeenCalledWith({
-          email: 'test@example.com',
-          password: 'password123',
-        });
+        expect(mockAuthContext.signIn).toHaveBeenCalledWith(
+          'test@example.com',
+          'password123'
+        );
       });
     });
 
@@ -204,7 +204,7 @@ describe('SignInForm', () => {
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
-      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       await act(async () => {
@@ -236,7 +236,7 @@ describe('SignInForm', () => {
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
-      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       await act(async () => {
@@ -253,14 +253,14 @@ describe('SignInForm', () => {
     it('shows error for network issues', async () => {
       const user = userEvent.setup();
       mockAuthContext.signIn.mockResolvedValue({
-        data: { user: null },
+        data: null,
         error: { message: 'Network error' },
       });
 
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
-      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       await act(async () => {
@@ -270,21 +270,21 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/erro de conexão/i)).toBeInTheDocument();
+        expect(screen.getByText(/Network error/i)).toBeInTheDocument();
       });
     });
 
     it('shows error for account not found', async () => {
       const user = userEvent.setup();
       mockAuthContext.signIn.mockResolvedValue({
-        data: { user: null },
+        data: null,
         error: { message: 'User not found' },
       });
 
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
-      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       await act(async () => {
@@ -294,7 +294,7 @@ describe('SignInForm', () => {
       });
 
       await waitFor(() => {
-        expect(screen.getByText(/usuário não encontrado/i)).toBeInTheDocument();
+        expect(screen.getByText(/User not found/i)).toBeInTheDocument();
       });
     });
   });
@@ -389,6 +389,14 @@ describe('SignInForm', () => {
 
       await user.tab();
 
+      // The password visibility button gets focus before the submit button
+      const passwordToggleButton = screen.getByRole('button', {
+        name: /mostrar senha/i,
+      });
+      expect(passwordToggleButton).toHaveFocus();
+
+      await user.tab();
+
       expect(submitButton).toHaveFocus();
     });
   });
@@ -407,7 +415,7 @@ describe('SignInForm', () => {
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
-      const passwordInput = screen.getByRole('textbox', { name: /senha/i });
+      const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       await act(async () => {

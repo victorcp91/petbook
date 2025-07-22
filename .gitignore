@@ -91,3 +91,5 @@ temp/
 
 # Visual regression testing
 cypress-visual-regression/ 
+
+apps/web/.next/

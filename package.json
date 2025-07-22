@@ -20,7 +20,6 @@
     "test:coverage": "jest --coverage",
     "test:ci": "jest --ci --coverage --watchAll=false",
     "test:unit": "jest --testPathPattern=__tests__ --coverage --watchAll=false",
-    "test:integration": "jest --testPathPattern=integration --coverage --watchAll=false",
     "test:e2e": "cypress run",
     "test:e2e:open": "cypress open",
     "test:component": "cypress run --component",

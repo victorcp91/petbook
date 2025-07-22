@@ -39,8 +39,9 @@ jobs:
       - name: Run unit tests
         run: npm run test:unit
 
-      - name: Run integration tests
-        run: npm run test:integration
+      # Integration tests removed - no Jest integration tests available
+      # - name: Run integration tests
+      #   run: npm run test:integration
 
       - name: Upload coverage reports
         uses: codecov/codecov-action@v3

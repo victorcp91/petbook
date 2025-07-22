@@ -108,11 +108,7 @@ export function SignInForm({
   // Handle input changes
   const handleInputChange = (field: keyof SignInFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
-
-    // Clear validation error when user starts typing
-    if (validationErrors[field]) {
-      setValidationErrors(prev => ({ ...prev, [field]: '' }));
-    }
+    // Don't clear validation errors automatically - let them persist until form submission
   };
 
   return (

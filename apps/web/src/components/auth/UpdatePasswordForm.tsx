@@ -45,6 +45,7 @@ export function UpdatePasswordForm({
   const [isSuccess, setIsSuccess] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   // Password validation
   const validatePassword = (password: string): string[] => {
@@ -74,9 +75,13 @@ export function UpdatePasswordForm({
     const errors: Record<string, string> = {};
 
     // Password validation
-    const passwordErrors = validatePassword(formData.password);
-    if (passwordErrors.length > 0) {
-      errors.password = passwordErrors.join(', ');
+    if (!formData.password) {
+      errors.password = 'Senha é obrigatória';
+    } else {
+      const passwordErrors = validatePassword(formData.password);
+      if (passwordErrors.length > 0) {
+        errors.password = passwordErrors.join(', ');
+      }
     }
 
     // Confirm password validation
@@ -93,6 +98,7 @@ export function UpdatePasswordForm({
   // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
 
     if (!validateForm()) {
       return;
@@ -104,16 +110,20 @@ export function UpdatePasswordForm({
       const { error: updateError } = await updatePassword(formData.password);
 
       if (updateError) {
+        setSubmitError(updateError.message);
         onError?.(updateError.message);
         return;
       }
 
       setIsSuccess(true);
+      // Clear form data after successful submission
+      setFormData({ password: '', confirmPassword: '' });
       onSuccess?.();
     } catch (error) {
-      onError?.(
-        error instanceof Error ? error.message : 'Erro ao atualizar senha'
-      );
+      const errorMessage =
+        error instanceof Error ? error.message : 'Erro ao atualizar senha';
+      setSubmitError(errorMessage);
+      onError?.(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -179,10 +189,12 @@ export function UpdatePasswordForm({
       <CardContent>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Error Alert */}
-          {error && (
+          {(error || submitError) && (
             <Alert variant="destructive">
               <XCircle className="h-4 w-4" />
-              <AlertDescription>{error.message}</AlertDescription>
+              <AlertDescription>
+                {error?.message || submitError}
+              </AlertDescription>
             </Alert>
           )}
 
@@ -206,6 +218,7 @@ export function UpdatePasswordForm({
                 size="sm"
                 className="absolute right-0 top-0 h-full px-3"
                 onClick={() => setShowPassword(!showPassword)}
+                aria-label="toggle password visibility"
               >
                 {showPassword ? (
                   <EyeOff className="h-4 w-4" />
@@ -249,6 +262,7 @@ export function UpdatePasswordForm({
                 size="sm"
                 className="absolute right-0 top-0 h-full px-3"
                 onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                aria-label="toggle password visibility"
               >
                 {showConfirmPassword ? (
                   <EyeOff className="h-4 w-4" />

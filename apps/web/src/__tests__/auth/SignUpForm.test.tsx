@@ -398,38 +398,7 @@ describe('SignUpForm', () => {
 
     render(<SignUpForm onSuccess={mockOnSuccess} onError={mockOnError} />);
 
-    const submitButton = screen.getByRole('button', { name: /criar conta/i });
-
-    await act(async () => {
-      await user.click(submitButton);
-    });
-
-    await waitFor(() => {
-      expect(mockSignUp).toHaveBeenCalledWith({
-        email: 'john@example.com',
-        password: 'Password123!',
-        options: {
-          data: {
-            full_name: 'John Doe',
-            cpf: '12345678901',
-            phone: '11987654321',
-            company_name: 'Test Company',
-            role: 'owner',
-          },
-        },
-      });
-    });
-  });
-
-  it('handles successful registration', async () => {
-    const user = userEvent.setup();
-    mockSignUp.mockResolvedValue({
-      data: { user: { id: '123', email: 'john@example.com' } },
-      error: null,
-    });
-
-    render(<SignUpForm onSuccess={mockOnSuccess} onError={mockOnError} />);
-
+    // Fill in all required fields
     await act(async () => {
       await user.type(screen.getByLabelText('Nome Completo *'), 'John Doe');
       await user.type(screen.getByLabelText('Email *'), 'john@example.com');
@@ -438,22 +407,109 @@ describe('SignUpForm', () => {
         screen.getByLabelText('Confirmar Senha *'),
         'Password123!'
       );
-      await user.type(screen.getByLabelText('CPF *'), '12345678901');
-      await user.type(screen.getByLabelText('Telefone *'), '11987654321');
+      await user.type(screen.getByLabelText('CPF (opcional)'), '12345678901');
       await user.type(
-        screen.getByLabelText('Nome da Empresa *'),
+        screen.getByLabelText('Telefone (opcional)'),
+        '11987654321'
+      );
+      await user.type(
+        screen.getByLabelText('Nome do Pet Shop *'),
         'Test Company'
+      );
+      await user.type(
+        screen.getByLabelText('Endereço do Pet Shop *'),
+        'Rua Teste, 123'
+      );
+      await user.type(
+        screen.getByLabelText('Telefone do Pet Shop *'),
+        '11999999999'
       );
     });
 
-    const submitButton = screen.getByRole('button', { name: /criar conta/i });
+    const submitButton = screen.getByRole('button', {
+      name: /criar pet shop/i,
+    });
 
     await act(async () => {
       await user.click(submitButton);
     });
 
     await waitFor(() => {
-      expect(mockOnSuccess).toHaveBeenCalled();
+      expect(mockSignUp).toHaveBeenCalledWith(
+        'john@example.com',
+        'Password123!',
+        {
+          name: 'John Doe',
+          role: 'owner',
+          shop_data: {
+            name: 'Test Company',
+            address: 'Rua Teste, 123',
+            phone: '11999999999',
+            owner_email: 'john@example.com',
+          },
+        }
+      );
+    });
+  });
+
+  it('handles successful registration', async () => {
+    const user = userEvent.setup();
+    mockSignUp.mockResolvedValue({
+      data: { user: null }, // User needs email confirmation
+      error: null,
+    });
+
+    render(<SignUpForm onSuccess={mockOnSuccess} onError={mockOnError} />);
+
+    // Fill in all required fields
+    await act(async () => {
+      await user.type(screen.getByLabelText('Nome Completo *'), 'John Doe');
+      await user.type(screen.getByLabelText('Email *'), 'john@example.com');
+      await user.type(screen.getByLabelText('Senha *'), 'Password123!');
+      await user.type(
+        screen.getByLabelText('Confirmar Senha *'),
+        'Password123!'
+      );
+      await user.type(screen.getByLabelText('CPF (opcional)'), '12345678901');
+      await user.type(
+        screen.getByLabelText('Telefone (opcional)'),
+        '11987654321'
+      );
+      await user.type(
+        screen.getByLabelText('Nome do Pet Shop *'),
+        'Test Company'
+      );
+      await user.type(
+        screen.getByLabelText('Endereço do Pet Shop *'),
+        'Rua Teste, 123'
+      );
+      await user.type(
+        screen.getByLabelText('Telefone do Pet Shop *'),
+        '11999999999'
+      );
+    });
+
+    const submitButton = screen.getByRole('button', {
+      name: /criar pet shop/i,
+    });
+
+    await act(async () => {
+      await user.click(submitButton);
+    });
+
+    // Check for confirmation screen instead of onSuccess callback
+    await waitFor(() => {
+      expect(screen.getByText('Verifique seu Email')).toBeInTheDocument();
+    });
+
+    await waitFor(() => {
+      expect(
+        screen.getByText(/enviamos um link de confirmação/i)
+      ).toBeInTheDocument();
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText(/john@example\.com/i)).toBeInTheDocument();
     });
   });
 });

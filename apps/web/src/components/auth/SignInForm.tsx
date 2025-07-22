@@ -125,7 +125,12 @@ export function SignInForm({
       </CardHeader>
 
       <CardContent>
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form
+          onSubmit={e => {
+            handleSubmit(e);
+          }}
+          className="space-y-4"
+        >
           {/* Error Alert */}
           {(error || submitError) && (
             <Alert variant="destructive">

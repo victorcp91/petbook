@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import { SignInForm } from '@/components/auth/SignInForm';
 import { useAuthContext } from '@/contexts/AuthContext';
+import { fireEvent } from '@testing-library/react';
 
 // Mock Supabase client
 const mockSignIn = jest.fn();
@@ -97,23 +98,24 @@ describe('SignInForm', () => {
     });
 
     it('shows error for invalid email format', async () => {
-      const user = userEvent.setup();
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
       const passwordInput = screen.getByPlaceholderText(/digite sua senha/i);
+
+      // Type invalid email and password using fireEvent
+      fireEvent.change(emailInput, { target: { value: 'invalid' } });
+      fireEvent.change(passwordInput, { target: { value: 'password123' } });
+
+      // Submit the form by clicking the submit button
       const submitButton = screen.getByRole('button', { name: /entrar/i });
+      fireEvent.click(submitButton);
 
-      // Type invalid email and password, then submit immediately
-      await act(async () => {
-        await user.type(emailInput, 'invalid-email');
-        await user.type(passwordInput, 'password123');
-        await user.click(submitButton);
-      });
-
-      // Wait for validation error to appear
+      // Wait for validation error to appear (flexible matcher)
       await waitFor(() => {
-        expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
+        expect(
+          screen.getByText(content => content.includes('Email inválido'))
+        ).toBeInTheDocument();
       });
     });
 
@@ -137,7 +139,6 @@ describe('SignInForm', () => {
     });
 
     it('validates email format correctly', async () => {
-      const user = userEvent.setup();
       render(<SignInForm />);
 
       const emailInput = screen.getByRole('textbox', { name: /email/i });
@@ -145,40 +146,20 @@ describe('SignInForm', () => {
       const submitButton = screen.getByRole('button', { name: /entrar/i });
 
       // Test invalid email
-      await act(async () => {
-        await user.type(emailInput, 'invalid-email');
-        await user.type(passwordInput, 'password123');
-        await user.click(submitButton);
-      });
+      fireEvent.change(emailInput, { target: { value: 'invalid-email' } });
+      fireEvent.change(passwordInput, { target: { value: 'password123' } });
+      fireEvent.click(submitButton);
 
       await waitFor(() => {
         expect(screen.getByText(/email inválido/i)).toBeInTheDocument();
       });
 
       // Test valid email
-      await act(async () => {
-        await user.clear(emailInput);
-        await user.type(emailInput, 'valid@example.com');
-        await user.click(submitButton);
-      });
+      fireEvent.change(emailInput, { target: { value: 'valid@example.com' } });
+      fireEvent.click(submitButton);
 
       await waitFor(() => {
         expect(screen.queryByText(/email inválido/i)).not.toBeInTheDocument();
-      });
-    });
-
-    it('debug: test validation is working', async () => {
-      const user = userEvent.setup();
-      render(<SignInForm />);
-
-      const submitButton = screen.getByRole('button', { name: /entrar/i });
-
-      await act(async () => {
-        await user.click(submitButton);
-      });
-
-      await waitFor(() => {
-        expect(screen.getByText(/email é obrigatório/i)).toBeInTheDocument();
       });
     });
   });

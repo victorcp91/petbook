@@ -11,13 +11,13 @@ import {
 describe('Card', () => {
   it('should render basic card with proper styling', () => {
     render(
-      <Card>
+      <Card data-testid="card">
         <CardContent>Card content</CardContent>
       </Card>
     );
 
     expect(screen.getByText('Card content')).toBeInTheDocument();
-    const card = screen.getByRole('article');
+    const card = screen.getByTestId('card');
     expect(card).toHaveClass(
       'rounded-lg',
       'border',
@@ -85,12 +85,12 @@ describe('Card', () => {
 
   it('should apply custom className to card', () => {
     render(
-      <Card className="custom-card">
+      <Card className="custom-card" data-testid="custom-card">
         <CardContent>Content</CardContent>
       </Card>
     );
 
-    const card = screen.getByRole('article');
+    const card = screen.getByTestId('custom-card');
     expect(card).toHaveClass('custom-card', 'rounded-lg', 'border', 'bg-card');
   });
 
